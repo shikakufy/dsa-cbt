@@ -1,58 +1,154 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    /* 1. 基本設定（タイポグラフィと色） */
+    :root {
+      --text-main: #111827; /* 真っ黒ではない濃いグレー */
+      --text-sub: #4b5563;
+      --bg-color: #ffffff;
+      --card-bg: #f3f4f6;
+      --primary-color: #000000;
+      --font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    }
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font-family);
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    /* コンテナ設定（コンテンツの最大幅） */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
+    /* 2. ヘッダー */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 40px;
+    }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+    .logo {
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+    .logo span {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-sub);
+      font-weight: normal;
+    }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+    nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-color);
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: opacity 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.8;
+    }
+
+    /* 3. ヒーローセクション（メインビジュアル） */
+    .hero {
+      padding: 120px 0 160px;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin: 0 0 30px;
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: var(--text-sub);
+      margin-bottom: 40px;
+    }
+
+    /* 4. 各セクションの共通設定（広大な余白） */
+    section {
+      padding: 100px 0;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 60px;
+      letter-spacing: -0.02em;
+    }
+
+    /* 5. What we do (カードレイアウト) */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 50px 40px;
+      border-radius: 16px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin: 0 0 15px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--text-sub);
+      font-size: 1rem;
+    }
+
+    /* 6. Latest news (リストレイアウト) */
+    .news-item {
+      border-top: 1px solid #e5e7eb;
+      padding: 40px 0;
+    }
+
+    .news-item:last-child {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .news-item h3 {
+      font-size: 1.4rem;
+      margin: 0 0 10px;
+    }
+
+    .news-item p {
+      margin: 0;
+      color: var(--text-sub);
+    }
 
 @media (prefers-color-scheme: light) {
   :root {
