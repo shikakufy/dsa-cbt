@@ -284,9 +284,7 @@ function App() {
 
                 <p style={{ marginBottom: '1rem' }}>「知の解像度を、最高レベルへ」<br />私たちは、単なる試験対策の会社ではありません。テクノロジーを駆使して「学びの解像度」を極限まで高め、ITエンジニア一人ひとりの可能性を拡張し続ける技術集団です。</p>
 
-                <p style={{ marginTop: '1.5rem', color: '#111827', fontWeight: 700 }}>デジタルスキルアカデミー合同会社<br />代表 <span style={{marginRight: '8px'}}>納富 翔太</span>
-                  <a href="#" onClick={(e) => { e.preventDefault(); setPreviousScreen('TOP'); setScreen('ABOUT'); window.scrollTo(0,0); }} style={{ marginLeft: '8px', fontSize: '0.95rem', color: '#002B5B', textDecoration: 'underline' }}>私たちについて</a>
-                </p>
+                <p style={{ marginTop: '1.5rem', color: '#111827', fontWeight: 700 }}>デジタルスキルアカデミー合同会社<br />代表 納富 翔太</p>
               </div>
             </div>
               </div>
@@ -308,7 +306,7 @@ function App() {
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px' }}>
             <a href="#" className="logo">
               デジタルスキルアカデミー
-              <span>学びを、エンジニアリングする。</span>
+              <span>学びをエンジニアリングする出版社</span>
             </a>
             <nav className="main-nav">
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('what-we-do'); }}>事業内容</a>
