@@ -385,10 +385,10 @@ function App() {
 
         <main style={{ paddingTop: '70px' }}>
           <section className="hero" style={{ position: 'relative', height: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)', overflow: 'hidden' }}>
-            {/* 背景にキャラクター画像（やや濃く、大きめに表示） */}
-            <img src="/charactor.jpg" alt="" style={{ position: 'absolute', width: '30%', maxWidth: '420px', right: '6%', top: '10%', opacity: 0.16, pointerEvents: 'none', transform: 'translateZ(0)', mixBlendMode: 'normal' }} />
-            <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#002B5B', lineHeight: '1.2' }}>ITエンジニアの「学び」を、<br />デジタルで革新する。</h1>
-            <p style={{ fontSize: '1.2rem', color: '#475569', marginTop: '24px', maxWidth: '700px' }}>応用情報技術者試験をはじめとする、高度IT人材育成のための最適な学習環境をプロデュースします。</p>
+            {/* 背景にキャンパス画像をヒーロー表示 */}
+            <img src="/campus.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35, pointerEvents: 'none', transform: 'translateZ(0)' }} />
+            <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#002B5B', lineHeight: '1.2', position: 'relative', zIndex: 1 }}>ITエンジニアの「学び」を、<br />デジタルで革新する。</h1>
+            <p style={{ fontSize: '1.2rem', color: '#475569', marginTop: '24px', maxWidth: '700px', position: 'relative', zIndex: 1 }}>応用情報技術者試験をはじめとする、高度IT人材育成のための最適な学習環境をプロデュースします。</p>
           </section>
 
           <div className="container">
