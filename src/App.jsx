@@ -46,6 +46,10 @@ function App() {
     }
   }, [screen]);
 
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [screen]);
+
   // --- スクロール検知ロジック ---
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -121,14 +125,28 @@ function App() {
       <div className="top-page-root">
         <header style={headerStyle}>
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
-            <a href="#" className="logo" onClick={() => setScreen('TOP')}>
-              デジタルスキルアカデミー
-              <span>模擬CBT ― ITエンジニアの学びを加速する</span>
-            </a>
+            <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <a href="#" className="logo" onClick={() => { setScreen('TOP'); setIsMenuOpen(false); }}>
+                デジタルスキルアカデミー
+                <span>模擬CBT ― ITエンジニアの学びを加速する</span>
+              </a>
+              <button
+                className="mobile-toggle"
+                aria-label={isMenuOpen ? '閉じるメニュー' : 'メニュー'}
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+              >
+                {isMenuOpen ? '✕' : '☰'}
+              </button>
+            </div>
             <nav className="main-nav">
-              <a href="#" onClick={() => { setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+              <a href="#" onClick={() => { setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
             </nav>
           </div>
+          {isMenuOpen && (
+            <div className="mobile-menu">
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+            </div>
+          )}
         </header>
         <main className="container" style={{ padding: '120px 40px 60px', textAlign: 'left' }}>
           <h1 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#002B5B', textAlign: 'left' }}>利用規約</h1>
@@ -189,14 +207,28 @@ function App() {
       <div className="top-page-root">
         <header style={headerStyle}>
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
-            <a href="#" className="logo" onClick={() => setScreen('TOP')}>
-              デジタルスキルアカデミー
-              <span>模擬CBT ― ITエンジニアの学びを加速する</span>
-            </a>
+            <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <a href="#" className="logo" onClick={() => { setScreen('TOP'); setIsMenuOpen(false); }}>
+                デジタルスキルアカデミー
+                <span>模擬CBT ― ITエンジニアの学びを加速する</span>
+              </a>
+              <button
+                className="mobile-toggle"
+                aria-label={isMenuOpen ? '閉じるメニュー' : 'メニュー'}
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+              >
+                {isMenuOpen ? '✕' : '☰'}
+              </button>
+            </div>
             <nav className="main-nav">
-              <a href="#" onClick={() => { setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+              <a href="#" onClick={() => { setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
             </nav>
           </div>
+          {isMenuOpen && (
+            <div className="mobile-menu">
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+            </div>
+          )}
         </header>
         <main className="container" style={{ padding: '120px 40px 60px', textAlign: 'left' }}>
           <h1 style={{ fontSize: '2rem', marginBottom: '2rem', color: '#002B5B', textAlign: 'left' }}>プライバシーポリシー</h1>
@@ -250,14 +282,28 @@ function App() {
         <div className="top-page-root">
           <header style={headerStyle}>
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
-              <a href="#" className="logo" onClick={() => setScreen('TOP')}>
-                デジタルスキルアカデミー
-                <span>模擬CBT ― ITエンジニアの学びを加速する</span>
-              </a>
+              <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                <a href="#" className="logo" onClick={() => { setScreen('TOP'); setIsMenuOpen(false); }}>
+                  デジタルスキルアカデミー
+                  <span>模擬CBT ― ITエンジニアの学びを加速する</span>
+                </a>
+                <button
+                  className="mobile-toggle"
+                  aria-label={isMenuOpen ? '閉じるメニュー' : 'メニュー'}
+                  onClick={() => setIsMenuOpen((prev) => !prev)}
+                >
+                  {isMenuOpen ? '✕' : '☰'}
+                </button>
+              </div>
               <nav className="main-nav">
-                <a href="#" onClick={() => { setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+                <a href="#" onClick={() => { setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
               </nav>
             </div>
+            {isMenuOpen && (
+              <div className="mobile-menu">
+                <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+              </div>
+            )}
           </header>
 
           <main className="container profile-page" style={{ padding: '120px 40px 80px', textAlign: 'left' }}>
@@ -304,10 +350,19 @@ function App() {
       <div className="top-page-root">
         <header style={headerStyle}>
           <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px' }}>
-            <a href="#" className="logo">
-              デジタルスキルアカデミー
-              <span>学びをエンジニアリングする出版社</span>
-            </a>
+            <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <a href="#" className="logo" onClick={() => { setScreen('TOP'); setIsMenuOpen(false); }}>
+                デジタルスキルアカデミー
+                <span>学びをエンジニアリングする出版社</span>
+              </a>
+              <button
+                className="mobile-toggle"
+                aria-label={isMenuOpen ? '閉じるメニュー' : 'メニュー'}
+                onClick={() => setIsMenuOpen((prev) => !prev)}
+              >
+                {isMenuOpen ? '✕' : '☰'}
+              </button>
+            </div>
             <nav className="main-nav">
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('what-we-do'); }}>事業内容</a>
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('join-us'); }}>会社概要</a>
@@ -316,6 +371,16 @@ function App() {
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
             </nav>
           </div>
+
+          {isMenuOpen && (
+            <div className="mobile-menu">
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('what-we-do'); }}>事業内容</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('join-us'); }}>会社概要</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('latest-news'); }}>ニュース</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setPreviousScreen('TOP'); setScreen('ABOUT'); window.scrollTo(0,0); }}>私たちについて</a>
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>お問い合わせ</a>
+            </div>
+          )}
         </header>
 
         <main style={{ paddingTop: '70px' }}>
@@ -392,8 +457,7 @@ function App() {
         { label: "会社名", value: "デジタルスキルアカデミー合同会社" },
         { label: "代表者", value: "納富 翔太" },
         { label: "設立", value: "2026年3月2日" },
-        { label: "所在地", value: "東京都渋谷区恵比寿西二丁目８番４号" },
-        { label: "資本金", value: "30,000円" }
+        { label: "所在地", value: "東京都渋谷区恵比寿西二丁目８番４号" }
       ].map((item, idx) => (
         <div key={idx} style={{ 
           display: 'flex', 
