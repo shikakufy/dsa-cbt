@@ -10,6 +10,15 @@
   padding: 0 20px;
 }
 
+/* ホームのヒーローは常に画面全体を埋める */
+.home-main {
+  padding: 0 !important;
+}
+
+.hero {
+  padding: 0 !important;
+}
+
 /* --- 2. デスクトップ用ヘッダー設定 --- */
 .main-nav {
   display: flex;
@@ -20,6 +29,32 @@
 /* スマホ用ボタンはPCでは隠す */
 .mobile-toggle {
   display: none;
+}
+
+/* ヘッダー配置: 社名は左、PCメニューは右 */
+.top-page-root header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-group {
+  margin-right: auto;
+}
+
+.logo-group .logo {
+  height: auto !important;
+  padding: 0 !important;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.main-nav {
+  margin-left: auto;
+  justify-content: flex-end;
 }
 
 /* --- 3. スマホ・タブレット対応 (880px以下) --- */
@@ -48,17 +83,25 @@
 
   /* ロゴが潰れないように調整 */
   .logo-group {
-    max-width: 70%;
+    max-width: none;
+    width: 100%;
+    justify-content: flex-start !important;
+    margin-left: 0;
   }
   
   .logo-group a {
     font-size: 1.1rem !important;
     white-space: nowrap; /* 社名を改行させない */
+    margin-left: 0 !important;
   }
 
   /* 利用規約・プライバシーポリシーページのメイン余白を調整 */
   main {
     padding: 140px 20px 60px !important;
+  }
+
+  .home-main {
+    padding: 0 !important;
   }
 
   /* ハンバーガーメニュー展開時のオーバーレイ */
@@ -118,13 +161,19 @@
     padding: 120px 20px 60px !important;
   }
 
+  .home-main {
+    padding: 0 !important;
+  }
+
   section {
     padding: 60px 0 !important;
   }
 
   .hero {
-    height: auto !important;
-    padding: 60px 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    min-height: 100dvh !important;
+    padding: 0 !important;
   }
 
   .hero h1 {

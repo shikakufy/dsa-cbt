@@ -8,12 +8,6 @@ const questions = [
   { id: 2, text: "問2：IPAが実施するCBT方式の試験に関する記述として、適切なものはどれか。", options: ["A. 採点結果の即時通知", "B. 筆記用具の持ち込み自由", "C. 全員一斉開始の徹底", "D. 問題用紙の持ち帰り"], answer: "A" },
 ];
 
-const samplePosts = [
-  { id: 1, title: '【応用情報】CBT試験で差がつく時間配分と優先順位', excerpt: '150分の制限時間をどう使い切るか。見直しのタイミングやフラグ機能の活用術を解説。', tags: ['試験対策','CBT攻略'], author: '納富 翔太', thumbnail: '' },
-  { id: 2, title: '効率的な復習を実現する「弱点抽出法」', excerpt: '過去問を解くだけで終わらせない。デジタルスキルアカデミー流の効率的な復習サイクル。', tags: ['学習法','過去問'], author: '教育開発チーム', thumbnail: '' },
-  { id: 3, title: '2026年度版：ストラテジ系の頻出テーマ徹底分析', excerpt: '最新の出題傾向から導き出した、短期間でスコアを伸ばすための重要ポイント集。', tags: ['ストラテジ','最新傾向'], author: '情報 太郎', thumbnail: '' },
-];
-
 function App() {
   // --- 追加：メニュー開閉用のState ---
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,6 +47,7 @@ function App() {
   // --- スクロール検知ロジック ---
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasHeroVideoCompleted, setHasHeroVideoCompleted] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -72,18 +67,19 @@ function App() {
   }, [lastScrollY]);
 
   // --- 共通ヘッダースタイル ---
+  const isTopHeroPlayback = screen === 'TOP' && !hasHeroVideoCompleted;
   const headerStyle = {
     position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
     zIndex: 1000,
-    backgroundColor: 'rgba(255, 255, 255, 0.95)',
-    backdropFilter: 'blur(10px)',
-    transition: 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out',
+    backgroundColor: isTopHeroPlayback ? 'transparent' : 'rgba(255, 255, 255, 0.7)',
+    backdropFilter: isTopHeroPlayback ? 'none' : 'blur(10px)',
+    transition: 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 5s ease, backdrop-filter 5s ease, box-shadow 5s ease',
     transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
     opacity: isVisible ? 1 : 0,
-    boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+    boxShadow: isTopHeroPlayback ? 'none' : '0 2px 10px rgba(0,0,0,0.05)',
   };
 
   const TOTAL = 80;
@@ -366,7 +362,6 @@ function App() {
             <nav className="main-nav">
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('what-we-do'); }}>事業内容</a>
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('join-us'); }}>会社概要</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('latest-news'); }}>ニュース</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setPreviousScreen('TOP'); setScreen('ABOUT'); window.scrollTo(0,0); }}>私たちについて</a>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
             </nav>
@@ -376,17 +371,24 @@ function App() {
             <div className="mobile-menu">
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('what-we-do'); }}>事業内容</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('join-us'); }}>会社概要</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('latest-news'); }}>ニュース</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setPreviousScreen('TOP'); setScreen('ABOUT'); window.scrollTo(0,0); }}>私たちについて</a>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>お問い合わせ</a>
             </div>
           )}
         </header>
 
-        <main style={{ paddingTop: '70px' }}>
-          <section className="hero" style={{ position: 'relative', height: '80vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)', overflow: 'hidden' }}>
-            {/* 背景にキャンパス画像をヒーロー表示 */}
-            <img src="/campus.jpg" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35, pointerEvents: 'none', transform: 'translateZ(0)' }} />
+        <main className="home-main" style={{ paddingTop: 0 }}>
+          <section className="hero" style={{ position: 'relative', width: '100%', height: '100vh', minHeight: '100dvh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)', overflow: 'hidden' }}>
+            {/* 背景動画を薄めの透過で表示 */}
+            <video
+              src="/heromovie.mp4"
+              autoPlay
+              muted
+              playsInline
+              aria-hidden="true"
+              onEnded={() => setHasHeroVideoCompleted(true)}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.2, pointerEvents: 'none', transform: 'translateZ(0)' }}
+            />
             <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#002B5B', lineHeight: '1.2', position: 'relative', zIndex: 1 }}>ITエンジニアの「学び」を、<br />デジタルで革新する。</h1>
             <p style={{ fontSize: '1.2rem', color: '#475569', marginTop: '24px', maxWidth: '700px', position: 'relative', zIndex: 1 }}>応用情報技術者試験をはじめとする、高度IT人材育成のための最適な学習環境をプロデュースします。</p>
           </section>
@@ -410,44 +412,6 @@ function App() {
               </div>
             </section>
 
-<section id="latest-news" style={{ padding: '80px 0', backgroundColor: '#fff' }}>
-  <div className="container">
-    <h2 style={{ fontSize: '1.8rem', color: '#002B5B', marginBottom: '40px', textAlign: 'center' }}>試験対策ニュース</h2>
-    <div className="news-list" style={{ display: 'grid', gap: '16px', maxWidth: '800px', margin: '0 auto' }}>
-      {samplePosts.map(p => (
-        <div key={p.id} className="news-card" style={{ 
-          display: 'flex', 
-          flexDirection: window.innerWidth <= 768 ? 'column' : 'row', // スマホでは縦並び
-          alignItems: window.innerWidth <= 768 ? 'flex-start' : 'center',
-          padding: '20px', 
-          backgroundColor: '#fff', 
-          borderRadius: '12px', 
-          border: '1px solid #e2e8f0',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.04)'
-        }}>
-          {/* タグ：スマホではタイトルの上に配置 */}
-          <div style={{ marginBottom: window.innerWidth <= 768 ? '12px' : '0', minWidth: '100px' }}>
-            <span style={{ 
-              fontSize: '10px', 
-              fontWeight: 'bold', 
-              padding: '4px 10px', 
-              borderRadius: '4px', 
-              backgroundColor: '#eff6ff', 
-              color: '#1e40af',
-              whiteSpace: 'nowrap'
-            }}>{p.tags[0]}</span>
-          </div>
-
-          <div style={{ flex: 1, paddingLeft: window.innerWidth <= 768 ? '0' : '20px' }}>
-            <h3 style={{ fontSize: '1.1rem', color: '#1e293b', marginBottom: '8px', lineHeight: '1.5' }}>{p.title}</h3>
-            <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: '1.6', margin: 0 }}>{p.excerpt}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
 <section id="join-us" style={{ padding: '80px 0', backgroundColor: '#f8fafc' }}>
   <div className="container" style={{ maxWidth: '800px' }}>
     <h2 style={{ fontSize: '1.8rem', color: '#002B5B', marginBottom: '40px', textAlign: 'center' }}>会社概要</h2>
@@ -457,7 +421,7 @@ function App() {
         { label: "会社名", value: "デジタルスキルアカデミー合同会社" },
         { label: "代表者", value: "納富 翔太" },
         { label: "設立", value: "2026年3月2日" },
-        { label: "所在地", value: "東京都渋谷区恵比寿西二丁目８番４号" }
+        { label: "所在地", value: "東京都渋谷区恵比寿西二丁目8番4号 EX恵比寿西ビル5階" }
       ].map((item, idx) => (
         <div key={idx} style={{ 
           display: 'flex', 
