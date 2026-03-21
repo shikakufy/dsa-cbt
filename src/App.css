@@ -578,13 +578,22 @@
   display: inline-block;
   margin-bottom: 28px;
   padding: 10px 16px;
-  font-size: 1.25rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: #0b3f7a;
-  background: linear-gradient(90deg, #e7f2ff 0%, #f5f9ff 100%);
-  border-left: 5px solid #007bff;
-  border-radius: 6px;
+  border-left: 8px solid #000;
+  border-radius: 4px;
+}
+
+/* 「学びをエンジニアリングする」専用 */
+.engineering-text {
+  color: #000000 !important;
+  font-family: "Noto Sans JP", "Inter", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  font-size: 1.2em;
+  display: inline-block;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
 }
 
 .ceo-text strong {
@@ -593,7 +602,8 @@
 }
 
 .ceo-image {
-  flex: 0 0 380px;
+  flex: 0 0 285px;
+  margin-top: 66px;
 }
 
 .ceo-image img {
@@ -670,7 +680,8 @@
 
   .ceo-image {
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
+    margin-top: 0;
     margin: 0 auto;
   }
 
