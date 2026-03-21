@@ -426,3 +426,359 @@
     .note-hero-inner { flex-direction:column; }
     .note-hero-right { width:100%; }
   }
+
+/* Services section (Top page) */
+.services-section {
+  padding: 80px 20px;
+  background-color: #f8f9fa;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.services-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 60px;
+  color: #333;
+}
+
+.services-section .section-title span {
+  display: block;
+  font-size: 0.9rem;
+  color: #007bff;
+  margin-top: 5px;
+  letter-spacing: 0.1em;
+}
+
+.services-section .service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.services-section .service-card {
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-section .service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.services-section .service-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #eef5ff;
+  color: #007bff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 16px;
+}
+
+.services-section .service-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(0, 123, 255, 0.1);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.services-section .service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #333;
+  border-bottom: 2px solid #007bff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.services-section .service-card h3 span {
+  display: block;
+  font-size: 0.8rem;
+  color: #888;
+  font-weight: normal;
+}
+
+.services-section .catchphrase {
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 15px;
+  line-height: 1.4;
+}
+
+.services-section .description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .services-section {
+    padding: 50px 15px;
+  }
+
+  .services-section .section-title {
+    margin-bottom: 40px;
+  }
+}
+
+/* CEO message section */
+.ceo-section {
+  padding: 100px 20px;
+  background-color: #ffffff;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.ceo-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 60px;
+  color: #333;
+}
+
+.ceo-section .section-title span {
+  display: block;
+  font-size: 0.9rem;
+  color: #007bff;
+  margin-top: 5px;
+  letter-spacing: 0.1em;
+}
+
+.ceo-intro-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 60px;
+  margin-bottom: 80px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ceo-text {
+  flex: 1;
+  line-height: 1.9;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.ceo-text p {
+  margin-bottom: 25px;
+}
+
+.ceo-tagline {
+  display: inline-block;
+  margin-bottom: 28px;
+  padding: 10px 16px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: #0b3f7a;
+  background: linear-gradient(90deg, #e7f2ff 0%, #f5f9ff 100%);
+  border-left: 5px solid #007bff;
+  border-radius: 6px;
+}
+
+.ceo-text strong {
+  color: #007bff;
+  background: linear-gradient(transparent 70%, #e0f0ff 70%);
+}
+
+.ceo-image {
+  flex: 0 0 380px;
+}
+
+.ceo-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+}
+
+.ceo-profile-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #f8f9fa;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+.ceo-name {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  border-left: 5px solid #007bff;
+  padding-left: 20px;
+}
+
+.ceo-name span {
+  font-size: 1rem;
+  color: #666;
+  margin-left: 15px;
+  font-weight: normal;
+}
+
+.timeline {
+  border-left: 2px solid #ddd;
+  padding-left: 30px;
+  margin-left: 10px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.dot {
+  position: absolute;
+  left: -37px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  background: #007bff;
+  border-radius: 50%;
+}
+
+.history-content strong {
+  display: block;
+  font-size: 1.15rem;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.history-content p {
+  font-size: 0.95rem;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .ceo-intro-flex {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .ceo-image {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .ceo-profile-card {
+    padding: 30px 20px;
+  }
+}
+
+/* Company overview section */
+.company-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.company-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 60px;
+  color: #333;
+}
+
+.company-section .section-title span {
+  display: block;
+  font-size: 0.9rem;
+  color: #007bff;
+  margin-top: 5px;
+  letter-spacing: 0.1em;
+}
+
+.company-info-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-top: 3px solid #007bff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 0 0 8px 8px;
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.company-table th,
+.company-table td {
+  padding: 25px 30px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.company-table th {
+  width: 30%;
+  background-color: #fcfcfc;
+  color: #333;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+.company-table td {
+  color: #555;
+  line-height: 1.7;
+}
+
+.business-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.business-list li {
+  position: relative;
+  padding-left: 1.5em;
+  margin-bottom: 8px;
+}
+
+.business-list li:last-child {
+  margin-bottom: 0;
+}
+
+.business-list li::before {
+  content: "■";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-size: 0.8em;
+  top: 0.1em;
+}
+
+@media (max-width: 768px) {
+  .company-section {
+    padding: 50px 15px;
+  }
+
+  .company-table th,
+  .company-table td {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .company-table th {
+    background-color: #f0f7ff;
+    border-bottom: none;
+    padding-bottom: 5px;
+  }
+
+  .company-table td {
+    padding-top: 5px;
+  }
+}

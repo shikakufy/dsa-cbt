@@ -22,7 +22,8 @@ function App() {
   useEffect(() => {
     // ページロード時及びハッシュ変更時に画面を更新
     const handleHashChange = () => {
-      const hash = window.location.hash.slice(1) || 'TOP';
+      const rawHash = window.location.hash.slice(1) || 'TOP';
+      const hash = rawHash === 'ABOUT' ? 'TOP' : rawHash;
       setScreen(hash);
     };
 
@@ -273,73 +274,8 @@ function App() {
     );
   }
 
-    function ProfilePage() {
-      return (
-        <div className="top-page-root">
-          <header style={headerStyle}>
-            <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '70px' }}>
-              <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                <a href="#" className="logo" onClick={() => { setScreen('TOP'); setIsMenuOpen(false); }}>
-                  デジタルスキルアカデミー
-                  <span>模擬CBT ― ITエンジニアの学びを加速する</span>
-                </a>
-                <button
-                  className="mobile-toggle"
-                  aria-label={isMenuOpen ? '閉じるメニュー' : 'メニュー'}
-                  onClick={() => setIsMenuOpen((prev) => !prev)}
-                >
-                  {isMenuOpen ? '✕' : '☰'}
-                </button>
-              </div>
-              <nav className="main-nav">
-                <a href="#" onClick={() => { setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
-              </nav>
-            </div>
-            {isMenuOpen && (
-              <div className="mobile-menu">
-                <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
-              </div>
-            )}
-          </header>
-
-          <main className="container profile-page" style={{ padding: '120px 40px 80px', textAlign: 'left' }}>
-            <h1 style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#002B5B' }}>私たちについて</h1>
-
-            <div className="profile-inner">
-              <div className="profile-photo">
-                <img src="/profile.jpg" alt="代表 納富 翔太" className="profile-img" />
-              </div>
-
-              <div className="profile-body">
-                <div style={{ color: '#475569', lineHeight: '1.9', fontSize: '0.98rem' }}>
-                <p style={{ marginBottom: '1rem', fontWeight: 700 }}>代表メッセージ：学びを、エンジニアリングする。</p>
-
-                <p style={{ marginBottom: '1rem' }}>「なぜ、私は17歳でITの世界を志したのか」<br />私のテクノロジーへの探求心は、17歳の時に「初級システムアドミニストレータ」の資格を取得した瞬間に産声を上げました。単に資格を得ること以上に、複雑な事象を分解し、論理的な解法を導き出す「問題分析」のプロセスに、私は抗いがたい魅力を感じたのです。</p>
-
-                <p style={{ marginBottom: '1rem' }}>その後、大阪大学、そして東京工業大学という日本最高峰の学府において、情報の深淵に触れる機会を得ました。そこで叩き込まれたのは、単なる知識の蓄積ではなく、物事の本質を構造的に捉え、最適化する「エンジニアリング」の思考回路です。</p>
-
-                <p style={{ marginBottom: '1rem' }}>「教育を、精神論からシステムへ」<br />現代において、デジタル技術の進展は目覚ましく、情報の価値は日々塗り替えられています。しかし、日本のIT教育はいまだに効率性や再現性に課題を残しています。</p>
-
-                <p style={{ marginBottom: '1rem' }}>私は、自らが歩んできた「問題分析」と「学術的研鑽」のプロセスを、誰もが享受できるシステムとして昇華させたいと考え、デジタルスキルアカデミーを設立しました。</p>
-
-                <p style={{ marginBottom: '1rem' }}>私たちの提供する書籍出版、対面研修、そして最新のCBT（Computer Based Testing）プラットフォームは、それぞれが独立した点ではありません。それらは、学習者が最短距離で「わかる」から「実装できる」へと至るために緻密に設計された、一つの大きなエンジニアリング・システムです。</p>
-
-                <p style={{ marginBottom: '1rem' }}>「知の解像度を、最高レベルへ」<br />私たちは、単なる試験対策の会社ではありません。テクノロジーを駆使して「学びの解像度」を極限まで高め、ITエンジニア一人ひとりの可能性を拡張し続ける技術集団です。</p>
-
-                <p style={{ marginTop: '1.5rem', color: '#111827', fontWeight: 700 }}>デジタルスキルアカデミー合同会社<br />代表 納富 翔太</p>
-              </div>
-            </div>
-              </div>
-          </main>
-
-          <Footer />
-        </div>
-      );
-    }
-
   if (screen === 'TERMS') return <TermsPage />;
   if (screen === 'PRIVACY') return <PrivacyPage />;
-  if (screen === 'ABOUT') return <ProfilePage />;
 
   if (screen === 'TOP') {
     return (
@@ -361,8 +297,8 @@ function App() {
             </div>
             <nav className="main-nav">
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('what-we-do'); }}>事業内容</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('join-us'); }}>会社概要</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setPreviousScreen('TOP'); setScreen('ABOUT'); window.scrollTo(0,0); }}>私たちについて</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('company'); }}>会社概要</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('ceo-message'); }}>私たちについて</a>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
             </nav>
           </div>
@@ -370,8 +306,8 @@ function App() {
           {isMenuOpen && (
             <div className="mobile-menu">
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('what-we-do'); }}>事業内容</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('join-us'); }}>会社概要</a>
-              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setPreviousScreen('TOP'); setScreen('ABOUT'); window.scrollTo(0,0); }}>私たちについて</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('company'); }}>会社概要</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('ceo-message'); }}>私たちについて</a>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>お問い合わせ</a>
             </div>
           )}
@@ -394,49 +330,153 @@ function App() {
           </section>
 
           <div className="container">
-            <section id="what-we-do" style={{ padding: '100px 0' }}>
-              <h2>事業内容</h2>
-              <div className="grid-cards">
-                <div className="card">
-                  <h3>書籍・教育コンテンツ制作</h3>
-                  <p>最新の試験傾向を分析した教材開発。動画講座やテキストを通じて、深い理解をサポートします。</p>
+            <section id="what-we-do" className="services-section">
+              <h2 className="section-title">事業内容<span>Service</span></h2>
+
+              <div className="service-grid">
+                <div className="service-card">
+                  <div className="service-icon" aria-hidden="true">📘</div>
+                  <div className="service-content">
+                    <span className="service-number">01</span>
+                    <h3>出版<span>Publishing</span></h3>
+                    <p className="catchphrase">ITエンジニアの「知」を支える、良質なコンテンツの創出</p>
+                    <p className="description">
+                      主にIT業界向けの教育・教養書の制作および出版を行っています。最新の技術動向から普遍的なリテラシーまで、読者の成長を加速させる確かな情報をお届けします。
+                    </p>
+                  </div>
                 </div>
-                <div className="card">
-                  <h3>模擬CBTプラットフォーム</h3>
-                  <p>本番さながらのUI/UXを再現した試験システムを提供。実践的な演習で合格力を高めます。</p>
+
+                <div className="service-card">
+                  <div className="service-icon" aria-hidden="true">👥</div>
+                  <div className="service-content">
+                    <span className="service-number">02</span>
+                    <h3>法人向け研修<span>Training</span></h3>
+                    <p className="catchphrase">組織の課題に即した、完全オーダーメイドの教育プログラム</p>
+                    <p className="description">
+                      企業のニーズに合わせ、ITスキルからマインドセットまで柔軟な研修を実施します。単なる知識の伝達に留まらず、現場で即戦力として活かせる実践的な学びを提供します。
+                    </p>
+                  </div>
                 </div>
-                <div className="card">
-                  <h3>DX人材育成コンサルティング</h3>
-                  <p>企業向けのITリテラシー向上研修。リスキリングを促進し、組織のデジタル変革を支援します。</p>
+
+                <div className="service-card">
+                  <div className="service-icon" aria-hidden="true">📈</div>
+                  <div className="service-content">
+                    <span className="service-number">03</span>
+                    <h3>DXコンサルティング<span>DX Consulting</span></h3>
+                    <p className="catchphrase">変革のパートナーとして、戦略の実行を伴走支援</p>
+                    <p className="description">
+                      企業のDX（デジタルトランスフォーメーション）施策を成功へ導くため、共に歩むパートナーとして支援します。戦略策定から現場への定着まで、実効性のあるソリューションを提案します。
+                    </p>
+                  </div>
                 </div>
               </div>
             </section>
 
-<section id="join-us" style={{ padding: '80px 0', backgroundColor: '#f8fafc' }}>
-  <div className="container" style={{ maxWidth: '800px' }}>
-    <h2 style={{ fontSize: '1.8rem', color: '#002B5B', marginBottom: '40px', textAlign: 'center' }}>会社概要</h2>
-    
-    <div className="profile-list" style={{ backgroundColor: '#fff', borderRadius: '16px', border: '1px solid #e2e8f0', overflow: 'hidden' }}>
-      {[
-        { label: "会社名", value: "デジタルスキルアカデミー合同会社" },
-        { label: "代表者", value: "納富 翔太" },
-        { label: "設立", value: "2026年3月2日" },
-        { label: "所在地", value: "東京都渋谷区恵比寿西二丁目8番4号 EX恵比寿西ビル5階" }
-      ].map((item, idx) => (
-        <div key={idx} style={{ 
-          display: 'flex', 
-          flexDirection: window.innerWidth <= 480 ? 'column' : 'row', // 極小スマホでは縦並び
-          padding: '20px', 
-          borderBottom: idx === 4 ? 'none' : '1px solid #f1f5f9',
-          gap: window.innerWidth <= 480 ? '4px' : '0'
-        }}>
-          <div style={{ flex: '0 0 120px', fontWeight: 'bold', color: '#64748b', fontSize: '0.85rem' }}>{item.label}</div>
-          <div style={{ flex: 1, color: '#1e293b', fontSize: '0.95rem', fontWeight: '500' }}>{item.value}</div>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
+            <section id="ceo-message" className="ceo-section">
+              <h2 className="section-title">代表メッセージ<span>CEO Message</span></h2>
+
+              <div className="ceo-intro-flex">
+                <div className="ceo-text">
+                  <p className="ceo-tagline">学びをエンジニアリングする</p>
+                  <p>私がデジタルに興味を持ったのは15歳の時。地元の工業高校への入学時に購入した「ポケコン」でプログラミングに没頭したことがすべての始まりでした。同時に、現在のITパスポートの源流である「初級システムアドミニストレータ」の学習を通じて、社会を支える技術の仕組みに強く惹かれました。</p>
+                  <p>その後、大阪大学大学院で工学を修め、社会人として歩む中で常に感じてきたのは、デジタルの底知れない奥深さと、それがもたらす変革の面白さです。しかし同時に、一生のうちの多くの時間を費やす「学ぶこと」と「働くこと」において、一人ひとりが持つ可能性を最大限に引き出すためには、単なる情報の羅列ではなく、良質な知識を確実に吸収し、実務へと繋げる「確かな仕組み」が必要であると痛感してきました。</p>
+                  <p>私はこれまで、リクルートでの多様な事業開発や、デジタル庁での行政DX推進、そして技術経営（MOT）の研究を通じ、一貫して「技術と組織、そして人の成長」に向き合ってきました。その中で確信したのは、意欲はあっても「何を、どう学べば正解に辿り着けるのか」が見えないという、<strong>学びの不確実性が最大の壁である</strong>ということです。</p>
+                  <p>デジタルスキルアカデミーは、この壁を打ち破るために「学びをエンジニアリングする」ことを掲げ、創業しました。産・官・学の各現場で培った実践的な知見を、科学的な教育アプローチで体系化し、高度IT人材を育成するための最適な学習環境をプロデュースします。</p>
+                  <p>理論と実践を繋ぎ、人と組織の可能性を解き放つこと。私たちが提供する「確かな学び」が、皆さんのキャリアと未来をより豊かに、より情熱的なものに変えていく伴走者となれば幸いです。</p>
+                </div>
+
+                <div className="ceo-image">
+                  <img src="/profile.jpg" alt="代表 納富翔太" />
+                </div>
+              </div>
+
+              <div className="ceo-profile-card">
+                <div className="profile-header">
+                  <h3 className="ceo-name">納富 翔太<span>Shota Nodomi / 代表</span></h3>
+                </div>
+
+                <div className="profile-body">
+                  <div className="timeline">
+                    <div className="timeline-item">
+                      <span className="dot"></span>
+                      <div className="history-content">
+                        <strong>国立大学法人 大阪大学大学院 工学研究科</strong>
+                        <p>工学の専門性を磨くとともに、デジタルの本質的な面白さを探究。</p>
+                      </div>
+                    </div>
+
+                    <div className="timeline-item">
+                      <span className="dot"></span>
+                      <div className="history-content">
+                        <strong>株式会社リクルート | プロジェクトマネージャー（Project Manager）</strong>
+                        <p>HR、住宅、結婚、自動車、社内DXなど多岐にわたる事業領域でプロジェクトマネジメントを経験。アジア・北米の海外開発チームとの協業に従事。</p>
+                      </div>
+                    </div>
+
+                    <div className="timeline-item">
+                      <span className="dot"></span>
+                      <div className="history-content">
+                        <strong>デジタル庁 | プロダクトマネージャーユニット長（Head of Product Management</strong>
+                        <p>国民向け・法人向けの基幹サービス立ち上げおよび運用を歴任。行政におけるPdM・PM組織のマネジメントを牽引。</p>
+                      </div>
+                    </div>
+
+                    <div className="timeline-item">
+                      <span className="dot"></span>
+                      <div className="history-content">
+                        <strong>国立大学法人 東京科学大学 | 技術経営専門職学位課程（MOT）</strong>
+                        <p>技術知見を経営・ビジネスの観点から再定義し、技術を価値に変える「仕組み」を学術的に研究。</p>
+                      </div>
+                    </div>
+
+                    <div className="timeline-item">
+                      <span className="dot"></span>
+                      <div className="history-content">
+                        <strong>デジタルスキルアカデミー | CEO</strong>
+                        <p>15歳からのIT学習経験と産・官・学での実績を背景に、技術書・教材書籍の出版および教育コンサルティングを行う会社として創業。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="company" className="company-section">
+              <h2 className="section-title">会社概要<span>Company Overview</span></h2>
+
+              <div className="company-info-wrapper">
+                <table className="company-table">
+                  <tbody>
+                    <tr>
+                      <th>会社名</th>
+                      <td>デジタルスキルアカデミー合同会社</td>
+                    </tr>
+                    <tr>
+                      <th>代表者</th>
+                      <td>納富 翔太</td>
+                    </tr>
+                    <tr>
+                      <th>設立</th>
+                      <td>2026年3月2日</td>
+                    </tr>
+                    <tr>
+                      <th>所在地</th>
+                      <td>〒150-0021 東京都渋谷区恵比寿西二丁目8番4号 EX恵比寿西ビル5階</td>
+                    </tr>
+                    <tr>
+                      <th>主な事業内容</th>
+                      <td>
+                        <ul className="business-list">
+                          <li>デジタルスキル及び情報技術に関する教育コンテンツの企画、制作、出版及び販売</li>
+                          <li>法人向けIT・DX研修の企画・運営</li>
+                          <li>企業のDX施策における伴走支援・コンサルティング</li>
+                        </ul>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
 
             <section id="contact" style={{ padding: '100px 0', textAlign: 'center' }}>
               <h2>お問い合わせ</h2>
