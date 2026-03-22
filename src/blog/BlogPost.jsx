@@ -1,7 +1,42 @@
+import { useCallback, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BLOG_POSTS } from './postsMeta';
 
 const REPORT_SRC = `${import.meta.env.BASE_URL}blog/ap-exam-standalone.html`;
+
+/** 同一オリジンの埋め込みレポートの実高さに合わせ、iframe 下の空きをなくす */
+function useReportIframeHeight() {
+  const iframeRef = useRef(null);
+
+  const fitIframeHeight = useCallback(() => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+    try {
+      const doc = iframe.contentDocument;
+      if (!doc?.body) return;
+      const measure = () => {
+        const b = doc.body;
+        const e = doc.documentElement;
+        return Math.max(
+          b.scrollHeight,
+          b.offsetHeight,
+          e.scrollHeight,
+          e.offsetHeight,
+        );
+      };
+      const apply = () => {
+        const h = measure();
+        if (h > 0) iframe.style.height = `${Math.ceil(h) + 8}px`;
+      };
+      apply();
+      requestAnimationFrame(() => requestAnimationFrame(apply));
+    } catch {
+      iframe.style.height = '6400px';
+    }
+  }, []);
+
+  return { iframeRef, fitIframeHeight };
+}
 
 export default function BlogPost() {
   const { id } = useParams();
@@ -28,6 +63,12 @@ export default function BlogPost() {
       </main>
     );
   }
+
+  return <BlogPostReport1 meta={meta} />;
+}
+
+function BlogPostReport1({ meta }) {
+  const { iframeRef, fitIframeHeight } = useReportIframeHeight();
 
   return (
     <main className="blog-page-main">
@@ -74,10 +115,12 @@ export default function BlogPost() {
 
         <div className="blog-report-iframe-wrap">
           <iframe
+            ref={iframeRef}
             className="blog-report-iframe"
             title="応用情報技術者試験 午前 シラバス小分類別 出題分析（R3〜R7）"
             src={REPORT_SRC}
             loading="lazy"
+            onLoad={fitIframeHeight}
           />
         </div>
 

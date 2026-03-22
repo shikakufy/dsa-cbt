@@ -56,7 +56,7 @@ body{font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text
 .nav-btn:hover,.nav-btn.on{background:var(--navy);color:#fff;border-color:var(--navy);}
 .nav-btn.strat:hover,.nav-btn.strat.on{background:var(--gold2);border-color:var(--gold2);color:#fff;}
 
-.main{max-width:1480px;margin:0 auto;padding:40px 56px;}
+.main{max-width:1480px;margin:0 auto;padding:40px 56px 28px;}
 
 .note{
   background:#fffbeb;border:1px solid #fde68a;border-left:3px solid var(--gold);

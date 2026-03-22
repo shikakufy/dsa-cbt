@@ -120,6 +120,13 @@
     padding: 140px 20px 60px !important;
   }
 
+  .blog-page-main {
+    padding-top: 100px !important;
+    padding-bottom: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
   .home-main {
     padding: 0 !important;
   }
@@ -179,6 +186,13 @@
   /* ほぼ元の余白を保持、スマホ用に軽微な調整のみ */
   main {
     padding: 120px 20px 60px !important;
+  }
+
+  .blog-page-main {
+    padding-top: 92px !important;
+    padding-bottom: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
   }
 
   .home-main {
