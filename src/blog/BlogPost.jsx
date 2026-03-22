@@ -1,6 +1,7 @@
 import { useCallback, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { BLOG_POSTS } from './postsMeta';
+import { useSEO } from '../hooks/useSEO';
 
 const REPORT_SRC = `${import.meta.env.BASE_URL}blog/ap-exam-standalone.html`;
 
@@ -41,6 +42,39 @@ function useReportIframeHeight() {
 export default function BlogPost() {
   const { id } = useParams();
   const meta = BLOG_POSTS.find((p) => p.id === id);
+
+  useSEO(
+    meta
+      ? {
+          title: meta.title,
+          description: meta.description,
+          path: `/blog/${meta.id}`,
+          jsonLdId: 'blog-post-ld',
+          jsonLd: {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: meta.title,
+            description: meta.description,
+            datePublished: meta.dateISO,
+            url: `https://digitalskillacademy.co.jp/blog/${meta.id}`,
+            author: {
+              '@type': 'Organization',
+              name: 'デジタルスキルアカデミー合同会社',
+              url: 'https://digitalskillacademy.co.jp',
+            },
+            publisher: {
+              '@type': 'Organization',
+              name: 'デジタルスキルアカデミー合同会社',
+              url: 'https://digitalskillacademy.co.jp',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://digitalskillacademy.co.jp/favicon.png',
+              },
+            },
+          },
+        }
+      : { title: 'ブログ', path: '/blog' },
+  );
 
   if (!meta) {
     return (

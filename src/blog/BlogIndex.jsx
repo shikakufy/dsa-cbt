@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
 import { BLOG_POSTS } from './postsMeta';
+import { useSEO } from '../hooks/useSEO';
 
 export default function BlogIndex() {
+  useSEO({
+    title: 'ブログ',
+    description:
+      '試験対策・学びのヒントを発信しています。情報処理技術者試験などIT資格の学習に役立つ記事を公開中。',
+    path: '/blog',
+  });
+
   return (
     <main className="blog-page-main container">
       <header className="blog-index-header">
