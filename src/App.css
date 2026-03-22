@@ -741,6 +741,14 @@
   font-weight: normal;
 }
 
+.profile-section-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #007bff;
+  letter-spacing: 0.08em;
+  margin: -28px 0 24px 25px;
+}
+
 .timeline {
   border-left: 2px solid #ddd;
   padding-left: 30px;

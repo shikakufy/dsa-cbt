@@ -213,6 +213,7 @@ function App() {
             <div className="ceo-profile-card">
               <div className="profile-header">
                 <h3 className="ceo-name">納富 翔太<span>Shota Nodomi / 代表</span></h3>
+                <p className="profile-section-label">経歴</p>
               </div>
 
               <div className="profile-body">
