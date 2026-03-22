@@ -8,10 +8,12 @@ import BlogIndex from './blog/BlogIndex.jsx'
 import BlogPost from './blog/BlogPost.jsx'
 import TermsPage from './pages/TermsPage.jsx'
 import PrivacyPage from './pages/PrivacyPage.jsx'
+import ScrollToTop from './ScrollToTop.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/terms" element={<TermsPage />} />
