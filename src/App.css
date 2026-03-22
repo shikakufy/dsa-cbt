@@ -427,6 +427,113 @@
     .note-hero-right { width:100%; }
   }
 
+/* 新着情報（ヒーロー直下） */
+.news-section {
+  padding: 56px 20px 64px;
+  background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+  border-bottom: 1px solid #e2e8f0;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.news-section .section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.news-section .section-title span {
+  display: block;
+  font-size: 0.9rem;
+  color: #007bff;
+  margin-top: 5px;
+  letter-spacing: 0.1em;
+}
+
+.news-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 880px;
+}
+
+.news-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e6eef6;
+  box-shadow: 0 4px 20px rgba(2, 43, 91, 0.05);
+}
+
+.news-item time {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: #002b5b;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+  min-width: 5.75rem;
+  padding-top: 0.15rem;
+}
+
+.news-item-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.news-badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #0b3b7a;
+  background: #eef6ff;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+}
+
+.news-title-link {
+  color: #0b2340;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.news-title-link:hover {
+  color: #007bff;
+}
+
+.news-title-text {
+  color: #0b2340;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 600px) {
+  .news-item {
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .news-item time {
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  .news-section .section-title {
+    font-size: 1.65rem;
+    margin-bottom: 28px;
+  }
+}
+
 /* Services section (Top page) */
 .services-section {
   padding: 80px 20px;
@@ -792,4 +899,141 @@
   .company-table td {
     padding-top: 5px;
   }
+}
+
+/* Blog（/blog/*） */
+.blog-page-main {
+  padding-top: 100px;
+  padding-bottom: 1rem;
+  min-height: 0;
+}
+
+.blog-index-header,
+.blog-article-header {
+  margin-bottom: 2rem;
+}
+
+.blog-page-title,
+.blog-article-title {
+  font-size: 1.85rem;
+  color: #002b5b;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0 0 0.5rem;
+}
+
+.blog-page-lead {
+  color: #475569;
+  line-height: 1.85;
+  margin: 0;
+  max-width: 720px;
+}
+
+.blog-post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 900px;
+}
+
+.blog-post-list-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #e5e7eb;
+  align-items: baseline;
+}
+
+.blog-post-list-item time {
+  color: #64748b;
+  font-size: 0.9rem;
+  min-width: 5.5rem;
+}
+
+.blog-post-list-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.blog-article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0 0 0.75rem;
+}
+
+.blog-article-intro {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 0 24px;
+  color: #475569;
+  line-height: 1.9;
+  font-size: 0.95rem;
+}
+
+.blog-article-intro p {
+  margin: 0 0 1.25rem;
+}
+
+.blog-intro-note {
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+.blog-takeaways {
+  margin: 0 0 1.25rem 1.25rem;
+  padding: 0;
+  line-height: 1.85;
+}
+
+.blog-takeaways li {
+  margin-bottom: 0.85rem;
+}
+
+.blog-takeaways li:last-child {
+  margin-bottom: 0;
+}
+
+.blog-report-iframe-wrap {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+
+.blog-report-iframe {
+  display: block;
+  width: 100%;
+  height: 7200px;
+  border: 0;
+}
+
+.blog-article-footer-nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px 0.75rem;
+}
+
+.blog-back-link {
+  color: #002b5b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.blog-back-link:hover {
+  text-decoration: underline;
+}
+
+.site-footer.corporate-footer.blog-page-footer {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin-top: 0;
 }

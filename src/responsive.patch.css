@@ -31,6 +31,21 @@
   display: none;
 }
 
+/* ヘッダー: 外側 header が flex かつ子が container だけだと幅が内容に縮み左寄りになるのを防ぐ */
+.top-page-root > header {
+  display: block;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.top-page-root > header > .container {
+  width: 100%;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* ヘッダー配置: 社名は左、PCメニューは右 */
 .top-page-root header .container {
   display: flex;
@@ -39,7 +54,8 @@
 }
 
 .logo-group {
-  margin-right: auto;
+  flex-shrink: 0;
+  margin-right: 1rem;
 }
 
 .logo-group .logo {
@@ -53,6 +69,7 @@
 }
 
 .main-nav {
+  flex-shrink: 0;
   margin-left: auto;
   justify-content: flex-end;
 }
@@ -81,12 +98,15 @@
     color: #002B5B;
   }
 
-  /* ロゴが潰れないように調整 */
+  /* ロゴ左・メニューボタン右 */
   .logo-group {
     max-width: none;
     width: 100%;
-    justify-content: flex-start !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
     margin-left: 0;
+    margin-right: 0;
   }
   
   .logo-group a {

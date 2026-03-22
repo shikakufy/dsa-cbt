@@ -1,6 +1,22 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './App.css';
 import './responsive.patch.css';
+
+/** トップページ内アンカー（ハッシュ）。これらは screen=TOP のまま該当セクションへスクロール */
+const TOP_SECTION_IDS = new Set(['what-we-do', 'company', 'ceo-message', 'news', 'contact']);
+
+// トップページ・新着情報
+const TOP_NEWS_ITEMS = [
+  {
+    id: '2026-03-22-ap-exam-trend',
+    dateISO: '2026-03-22',
+    dateLabel: '2026.3.22',
+    category: 'ブログ',
+    title: '応用情報技術者試験の過去5年間の出題傾向を分析してみました。',
+    href: '/blog/1',
+  },
+];
 
 // --- 最小モックデータ ---
 const questions = [
@@ -23,6 +39,13 @@ function App() {
     // ページロード時及びハッシュ変更時に画面を更新
     const handleHashChange = () => {
       const rawHash = window.location.hash.slice(1) || 'TOP';
+      if (TOP_SECTION_IDS.has(rawHash)) {
+        setScreen('TOP');
+        requestAnimationFrame(() => {
+          document.getElementById(rawHash)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        return;
+      }
       const hash = rawHash === 'ABOUT' ? 'TOP' : rawHash;
       setScreen(hash);
     };
@@ -36,7 +59,9 @@ function App() {
 
   // screen が変わった時に URL ハッシュを更新
   useEffect(() => {
-    if (window.location.hash.slice(1) !== screen) {
+    const h = window.location.hash.slice(1);
+    if (TOP_SECTION_IDS.has(h)) return;
+    if (h !== screen) {
       window.history.pushState({ screen }, '', `#${screen}`);
     }
   }, [screen]);
@@ -137,11 +162,13 @@ function App() {
             </div>
             <nav className="main-nav">
               <a href="#" onClick={() => { setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+              <Link to="/blog" onClick={() => setIsMenuOpen(false)}>ブログ</Link>
             </nav>
           </div>
           {isMenuOpen && (
             <div className="mobile-menu">
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+              <Link to="/blog" onClick={() => setIsMenuOpen(false)}>ブログ</Link>
             </div>
           )}
         </header>
@@ -219,11 +246,13 @@ function App() {
             </div>
             <nav className="main-nav">
               <a href="#" onClick={() => { setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+              <Link to="/blog" onClick={() => setIsMenuOpen(false)}>ブログ</Link>
             </nav>
           </div>
           {isMenuOpen && (
             <div className="mobile-menu">
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); setScreen(previousScreen); window.scrollTo(0,0); }}>戻る</a>
+              <Link to="/blog" onClick={() => setIsMenuOpen(false)}>ブログ</Link>
             </div>
           )}
         </header>
@@ -299,6 +328,7 @@ function App() {
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('what-we-do'); }}>事業内容</a>
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('company'); }}>会社概要</a>
               <a href="#" onClick={(e) => { e.preventDefault(); scrollToSection('ceo-message'); }}>私たちについて</a>
+              <Link to="/blog">ブログ</Link>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
             </nav>
           </div>
@@ -308,6 +338,7 @@ function App() {
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('what-we-do'); }}>事業内容</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('company'); }}>会社概要</a>
               <a href="#" onClick={(e) => { e.preventDefault(); setIsMenuOpen(false); scrollToSection('ceo-message'); }}>私たちについて</a>
+              <Link to="/blog" onClick={() => setIsMenuOpen(false)}>ブログ</Link>
               <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>お問い合わせ</a>
             </div>
           )}
@@ -327,6 +358,38 @@ function App() {
             />
             <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#002B5B', lineHeight: '1.2', position: 'relative', zIndex: 1 }}>「学び」をエンジニアリングする。</h1>
             <p style={{ fontSize: '1.2rem', color: '#475569', marginTop: '24px', maxWidth: '700px', position: 'relative', zIndex: 1 }}>情報処理技術者試験をはじめとする、高度IT人材育成のための書籍・学びの場をプロデュースします。</p>
+          </section>
+
+          <section id="news" className="news-section" aria-labelledby="news-heading">
+            <div className="container">
+              <h2 className="section-title" id="news-heading">
+                新着情報
+                <span>News</span>
+              </h2>
+              <ul className="news-list">
+                {TOP_NEWS_ITEMS.map((item) => (
+                  <li key={item.id} className="news-item">
+                    <time dateTime={item.dateISO}>{item.dateLabel}</time>
+                    <div className="news-item-body">
+                      <span className="news-badge">{item.category}</span>
+                      {item.href ? (
+                        item.href.startsWith('/blog') ? (
+                          <Link className="news-title-link" to={item.href}>
+                            {item.title}
+                          </Link>
+                        ) : (
+                          <a className="news-title-link" href={item.href} target="_blank" rel="noopener noreferrer">
+                            {item.title}
+                          </a>
+                        )
+                      ) : (
+                        <span className="news-title-text">{item.title}</span>
+                      )}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </section>
 
           <div className="container">

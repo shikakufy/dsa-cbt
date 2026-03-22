@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>応用情報技術者試験 午前 出題分析 R3〜R7 | デジタルスキルアカデミー</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog-ap-report.css">
+</head>
+<body>
+<div class="hero">
+  <div class="hero-eyebrow">Digital Skill Academy · Analysis Report</div>
+  <div class="hero-title">応用情報技術者試験 午前<br><em>シラバス小分類別 出題分析レポート</em></div>
+  <div class="hero-sub">令和3年春期（2021.4）〜 令和7年秋期（2025.10）｜IPAシラバスVer.7.1準拠</div>
+  <div class="hero-kpi">
+    <div class="kpi"><div class="kpi-num">800</div><div class="kpi-label">総出題数（80問×10回）</div></div>
+    <div class="kpi"><div class="kpi-num">10</div><div class="kpi-label">試験回数</div></div>
+    <div class="kpi"><div class="kpi-num">64</div><div class="kpi-label">出題のある小分類数</div></div>
+    <div class="kpi"><div class="kpi-num">92</div><div class="kpi-label">シラバス全小分類数</div></div>
+  </div>
+</div>
+
+<nav class="topnav">
+  <span class="nav-logo">AP EXAM</span>
+  <div class="nav-sep"></div>
+  <button type="button" class="nav-btn" onclick="scrollSys('all',this)">すべて</button>
+  <button type="button" class="nav-btn" onclick="scrollSys('テクノロジ系',this)">テクノロジ系</button>
+  <button type="button" class="nav-btn" onclick="scrollSys('マネジメント系',this)">マネジメント系</button>
+  <button type="button" class="nav-btn strat" onclick="scrollSys('ストラテジ系',this)">ストラテジ系</button>
+</nav>
+
+<div class="main">
+
+  <div class="note">
+    <b>シラバス準拠：</b>大分類1〜9・中分類1〜23の階層構造はIPAシラバスVer.7.1に準拠。
+    各セルの数値は1回の試験での出題問数。出題数0の小分類はデフォルト非表示。
+    <b>注：</b>小分類レベルの回別データはIPAシラバス・試験要綱配点割合をもとにした推計値を含みます。
+  </div>
+  <div class="summary-grid">
+    <div class="card">
+      <div class="card-title">大分類一覧</div>
+      <p class="sys-grp-label" style="color:#1e3a8a">テクノロジ系</p><div class="dai-chip" data-dai="1" style="border-color:#1e3a8a30">
+  <span class="dai-num" style="color:#1e3a8a">大1</span>
+  <span class="dai-nm">基礎理論</span>
+  <span class="dai-tot" style="color:#3b82f6">93</span>
+</div><div class="dai-chip" data-dai="2" style="border-color:#1e3a8a30">
+  <span class="dai-num" style="color:#1e3a8a">大2</span>
+  <span class="dai-nm">コンピュータシステム</span>
+  <span class="dai-tot" style="color:#3b82f6">140</span>
+</div><div class="dai-chip" data-dai="3" style="border-color:#1e3a8a30">
+  <span class="dai-num" style="color:#1e3a8a">大3</span>
+  <span class="dai-nm">技術要素</span>
+  <span class="dai-tot" style="color:#3b82f6">207</span>
+</div><div class="dai-chip" data-dai="4" style="border-color:#1e3a8a30">
+  <span class="dai-num" style="color:#1e3a8a">大4</span>
+  <span class="dai-nm">開発技術</span>
+  <span class="dai-tot" style="color:#3b82f6">60</span>
+</div><p class="sys-grp-label" style="color:#1d4ed8">マネジメント系</p><div class="dai-chip" data-dai="5" style="border-color:#1d4ed830">
+  <span class="dai-num" style="color:#1d4ed8">大5</span>
+  <span class="dai-nm">プロジェクトマネジメント</span>
+  <span class="dai-tot" style="color:#3b82f6">70</span>
+</div><div class="dai-chip" data-dai="6" style="border-color:#1d4ed830">
+  <span class="dai-num" style="color:#1d4ed8">大6</span>
+  <span class="dai-nm">サービスマネジメント</span>
+  <span class="dai-tot" style="color:#3b82f6">30</span>
+</div><p class="sys-grp-label" style="color:#92400e">ストラテジ系</p><div class="dai-chip" data-dai="7" style="border-color:#92400e30">
+  <span class="dai-num" style="color:#92400e">大7</span>
+  <span class="dai-nm">システム戦略</span>
+  <span class="dai-tot" style="color:#d97706">60</span>
+</div><div class="dai-chip" data-dai="8" style="border-color:#92400e30">
+  <span class="dai-num" style="color:#92400e">大8</span>
+  <span class="dai-nm">経営戦略</span>
+  <span class="dai-tot" style="color:#d97706">70</span>
+</div><div class="dai-chip" data-dai="9" style="border-color:#92400e30">
+  <span class="dai-num" style="color:#92400e">大9</span>
+  <span class="dai-nm">企業と法務</span>
+  <span class="dai-tot" style="color:#d97706">70</span>
+</div>
+    </div>
+    <div class="card">
+      <div class="card-title">出題頻度 Top 10（10回合計）</div>
+      <div class="top-item">
+  <span class="top-rank">#1</span>
+  <div class="top-info">
+    <span class="top-name">システムの構成</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中4: システム構成要素</span>
+    </span>
+  </div>
+  <span class="top-count">30</span>
+  <div class="top-bar"><div style="width:100%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#2</span>
+  <div class="top-info">
+    <span class="top-name">アルゴリズム</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中2: アルゴリズムとプログラミング</span>
+    </span>
+  </div>
+  <span class="top-count">25</span>
+  <div class="top-bar"><div style="width:83%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#3</span>
+  <div class="top-info">
+    <span class="top-name">応用数学</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中1: 基礎理論</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#4</span>
+  <div class="top-info">
+    <span class="top-name">プロセッサ</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中3: コンピュータ構成要素</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#5</span>
+  <div class="top-info">
+    <span class="top-name">システムの評価指標</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中4: システム構成要素</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#6</span>
+  <div class="top-info">
+    <span class="top-name">オペレーティングシステム</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中5: ソフトウェア</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#7</span>
+  <div class="top-info">
+    <span class="top-name">ハードウェア</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中6: ハードウェア</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#8</span>
+  <div class="top-info">
+    <span class="top-name">データ操作</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中9: データベース</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#9</span>
+  <div class="top-info">
+    <span class="top-name">通信プロトコル</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中10: ネットワーク</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div><div class="top-item">
+  <span class="top-rank">#10</span>
+  <div class="top-info">
+    <span class="top-name">情報セキュリティ</span>
+    <span class="top-meta">
+      <span class="tag" style="background:#1e3a8a;color:#ffffff">テクノ</span>
+      <span class="tag-mid">中11: セキュリティ</span>
+    </span>
+  </div>
+  <span class="top-count">20</span>
+  <div class="top-bar"><div style="width:66%;background:#3b82f6;height:100%;border-radius:2px"></div></div>
+</div>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <span class="filter-label">凡例：</span>
+    <div class="legend-wrap">
+      <span class="leg-chip" style="background:#f8fafc;color:#94a3b8">— 0問</span>
+      <span class="leg-chip" style="background:#dbeafe;color:#1e40af">1問</span>
+      <span class="leg-chip" style="background:#93c5fd;color:#1e3a8a">2問</span>
+      <span class="leg-chip" style="background:#1e3a8a;color:#fff">3問以上</span>
+      <span class="leg-chip" style="background:#fef3c7;color:#92400e">合計 1〜5</span>
+      <span class="leg-chip" style="background:#fcd34d;color:#78350f">合計 6〜10</span>
+      <span class="leg-chip" style="background:#d97706;color:#fff">合計 11〜15</span>
+      <span class="leg-chip" style="background:#92400e;color:#fff">合計 16〜</span>
+    </div>
+    <label class="toggle-label">
+      <input type="checkbox" id="showZero" onchange="toggleZero(this)">
+      0問の小分類を表示
+    </label>
+  </div>
+<div class="sys-block" id="sys-テク" data-system="テクノロジ系">
+  <div class="sys-hdr" style="background:#1e3a8a">
+    <span class="sys-badge">テクノロジ系</span>
+  </div>
+<div class="dai-sec" id="dai-1">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#1e3a8a">大分類 1</span>
+    <span class="dai-hdr-name">基礎理論</span>
+    <span class="dai-hdr-tot">93問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 1</span>
+      <span class="mid-name">基礎理論</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">48</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">離散数学</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#92400e;color:#ffffff">18</td></tr><tr><td class="small-cell">応用数学</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">情報に関する理論</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">通信に関する理論</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">計測・制御に関する理論</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 2</span>
+      <span class="mid-name">アルゴリズムとプログラミング</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">45</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">データ構造</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">アルゴリズム</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#1e3a8a;color:#ffffff">3</td><td class="total-td" style="background:#92400e;color:#ffffff">25</td></tr><tr class="zero-row"><td class="small-cell">プログラミング</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr><td class="small-cell">プログラム言語</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">その他の言語</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div></div></div>
+<div class="dai-sec" id="dai-2">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#1e3a8a">大分類 2</span>
+    <span class="dai-hdr-name">コンピュータシステム</span>
+    <span class="dai-hdr-tot">140問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 3</span>
+      <span class="mid-name">コンピュータ構成要素</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">40</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">プロセッサ</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">メモリ</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#d97706;color:#ffffff">14</td></tr><tr class="zero-row"><td class="small-cell">バス</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr><td class="small-cell">入出力デバイス</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">6</td></tr><tr class="zero-row"><td class="small-cell">入出力装置</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 4</span>
+      <span class="mid-name">システム構成要素</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">50</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">システムの構成</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td style="background:#1e3a8a;color:#ffffff">3</td><td class="total-td" style="background:#92400e;color:#ffffff">30</td></tr><tr><td class="small-cell">システムの評価指標</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 5</span>
+      <span class="mid-name">ソフトウェア</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">30</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">オペレーティングシステム</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr class="zero-row"><td class="small-cell">ミドルウェア</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr><td class="small-cell">ファイルシステム</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">開発ツール</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">オープンソースソフトウェア</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 6</span>
+      <span class="mid-name">ハードウェア</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">20</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">ハードウェア</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr></tbody>
+      </table>
+    </div>
+  </div></div></div>
+<div class="dai-sec" id="dai-3">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#1e3a8a">大分類 3</span>
+    <span class="dai-hdr-name">技術要素</span>
+    <span class="dai-hdr-tot">207問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 7</span>
+      <span class="mid-name">ユーザーインタフェース</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">10</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">ユーザーインタフェース技術</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#fef3c7;color:#92400e">5</td></tr><tr><td class="small-cell">UX/UIデザイン</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fef3c7;color:#92400e">5</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 8</span>
+      <span class="mid-name">情報メディア</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">10</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">マルチメディア技術</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">9</td></tr><tr><td class="small-cell">マルチメディア応用</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#fef3c7;color:#92400e">1</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 9</span>
+      <span class="mid-name">データベース</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">56</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">データベース方式</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">データベース設計</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">データ操作</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">トランザクション処理</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">データベース応用</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">6</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 10</span>
+      <span class="mid-name">ネットワーク</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">59</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">ネットワーク方式</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">データ通信と制御</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">通信プロトコル</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">ネットワーク管理</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">ネットワーク応用</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">9</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 11</span>
+      <span class="mid-name">セキュリティ</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">72</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">情報セキュリティ</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">情報セキュリティ管理</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#d97706;color:#ffffff">13</td></tr><tr><td class="small-cell">セキュリティ技術評価</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#fef3c7;color:#92400e">1</td></tr><tr><td class="small-cell">情報セキュリティ対策</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">セキュリティ実装技術</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#92400e;color:#ffffff">18</td></tr></tbody>
+      </table>
+    </div>
+  </div></div></div>
+<div class="dai-sec" id="dai-4">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#1e3a8a">大分類 4</span>
+    <span class="dai-hdr-name">開発技術</span>
+    <span class="dai-hdr-tot">60問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 12</span>
+      <span class="mid-name">システム開発技術</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">40</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">システム要件定義・ソフトウェア要件定義</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">設計</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">実装・構築</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">統合・テスト</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">導入・受入れ支援</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">保守・廃棄</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1e3a8a">
+      <span class="mid-badge" style="background:#1e3a8a;color:#ffffff">中分類 13</span>
+      <span class="mid-name">ソフトウェア開発管理技術</span>
+      <span class="mid-tot">10回合計 <b style="color:#1e3a8a">20</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">開発プロセス・手法</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr class="zero-row"><td class="small-cell">知的財産適用管理</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">開発環境管理</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">構成管理・変更管理</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div></div></div></div>
+<div class="sys-block" id="sys-マネ" data-system="マネジメント系">
+  <div class="sys-hdr" style="background:#1d4ed8">
+    <span class="sys-badge">マネジメント系</span>
+  </div><div class="dai-sec" id="dai-5">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#1d4ed8">大分類 5</span>
+    <span class="dai-hdr-name">プロジェクトマネジメント</span>
+    <span class="dai-hdr-tot">70問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1d4ed8">
+      <span class="mid-badge" style="background:#1d4ed8;color:#ffffff">中分類 14</span>
+      <span class="mid-name">プロジェクトマネジメント</span>
+      <span class="mid-tot">10回合計 <b style="color:#1d4ed8">70</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">プロジェクトマネジメント全般</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">プロジェクトのスコープ</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">プロジェクトの資源</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">プロジェクトの時間</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">プロジェクトのコスト</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">プロジェクトのリスク</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">プロジェクトの品質</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">プロジェクトの調達</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">プロジェクトのコミュニケーション</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div></div><div class="dai-sec" id="dai-6">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#1d4ed8">大分類 6</span>
+    <span class="dai-hdr-name">サービスマネジメント</span>
+    <span class="dai-hdr-tot">30問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1d4ed8">
+      <span class="mid-badge" style="background:#1d4ed8;color:#ffffff">中分類 15</span>
+      <span class="mid-name">サービスマネジメント</span>
+      <span class="mid-tot">10回合計 <b style="color:#1d4ed8">20</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">サービスマネジメント</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">サービスサポート</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">ファシリティマネジメント</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #1d4ed8">
+      <span class="mid-badge" style="background:#1d4ed8;color:#ffffff">中分類 16</span>
+      <span class="mid-name">システム監査</span>
+      <span class="mid-tot">10回合計 <b style="color:#1d4ed8">10</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">システム監査</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">内部統制</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div></div></div></div>
+<div class="sys-block" id="sys-スト" data-system="ストラテジ系">
+  <div class="sys-hdr" style="background:#92400e">
+    <span class="sys-badge">ストラテジ系</span>
+  </div><div class="dai-sec" id="dai-7">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#92400e">大分類 7</span>
+    <span class="dai-hdr-name">システム戦略</span>
+    <span class="dai-hdr-tot">60問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #92400e">
+      <span class="mid-badge" style="background:#92400e;color:#ffffff">中分類 17</span>
+      <span class="mid-name">システム戦略</span>
+      <span class="mid-tot">10回合計 <b style="color:#92400e">40</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">情報システム戦略</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">業務プロセス</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">ソリューションビジネス</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">システム活用促進・評価</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #92400e">
+      <span class="mid-badge" style="background:#92400e;color:#ffffff">中分類 18</span>
+      <span class="mid-name">システム企画</span>
+      <span class="mid-tot">10回合計 <b style="color:#92400e">20</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">システム化計画</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">要件定義</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr><td class="small-cell">調達計画・実施</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr></tbody>
+      </table>
+    </div>
+  </div></div><div class="dai-sec" id="dai-8">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#92400e">大分類 8</span>
+    <span class="dai-hdr-name">経営戦略</span>
+    <span class="dai-hdr-tot">70問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #92400e">
+      <span class="mid-badge" style="background:#92400e;color:#ffffff">中分類 19</span>
+      <span class="mid-name">経営戦略マネジメント</span>
+      <span class="mid-tot">10回合計 <b style="color:#92400e">40</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">経営戦略手法</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">マーケティング</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">ビジネス戦略と目標・評価</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">経営管理システム</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #92400e">
+      <span class="mid-badge" style="background:#92400e;color:#ffffff">中分類 20</span>
+      <span class="mid-name">技術戦略マネジメント</span>
+      <span class="mid-tot">10回合計 <b style="color:#92400e">10</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">技術開発戦略の立案</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">技術開発計画</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #92400e">
+      <span class="mid-badge" style="background:#92400e;color:#ffffff">中分類 21</span>
+      <span class="mid-name">ビジネスインダストリ</span>
+      <span class="mid-tot">10回合計 <b style="color:#92400e">20</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">ビジネスシステム</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">エンジニアリングシステム</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr><td class="small-cell">e-ビジネス</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">民生機器</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">産業機器</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div></div><div class="dai-sec" id="dai-9">
+  <div class="dai-hdr">
+    <span class="dai-hdr-num" style="color:#92400e">大分類 9</span>
+    <span class="dai-hdr-name">企業と法務</span>
+    <span class="dai-hdr-tot">70問</span>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #92400e">
+      <span class="mid-badge" style="background:#92400e;color:#ffffff">中分類 22</span>
+      <span class="mid-name">企業活動</span>
+      <span class="mid-tot">10回合計 <b style="color:#92400e">40</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">経営・組織論</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">業務分析・データ利活用</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td style="background:#93c5fd;color:#1e3a8a">2</td><td class="total-td" style="background:#92400e;color:#ffffff">20</td></tr><tr><td class="small-cell">会計・財務</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr></tbody>
+      </table>
+    </div>
+  </div><div class="mid-blk">
+    <div class="mid-hdr" style="border-left:3px solid #92400e">
+      <span class="mid-badge" style="background:#92400e;color:#ffffff">中分類 23</span>
+      <span class="mid-name">法務</span>
+      <span class="mid-tot">10回合計 <b style="color:#92400e">30</b>問</span>
+    </div>
+    <div class="tbl-wrap">
+      <table class="dtbl">
+        <thead><tr>
+          <th class="small-th">小分類</th><th class="exam-th">R3春</th><th class="exam-th">R3秋</th><th class="exam-th">R4春</th><th class="exam-th">R4秋</th><th class="exam-th">R5春</th><th class="exam-th">R5秋</th><th class="exam-th">R6春</th><th class="exam-th">R6秋</th><th class="exam-th">R7春</th><th class="exam-th">R7秋</th><th class="total-th">合計</th>
+        </tr></thead>
+        <tbody><tr><td class="small-cell">知的財産権</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">セキュリティ関連法規</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr><td class="small-cell">労働関連法規・取引関連法規</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td style="background:#dbeafe;color:#1e40af">1</td><td class="total-td" style="background:#fcd34d;color:#78350f">10</td></tr><tr class="zero-row"><td class="small-cell">その他の法律・ガイドライン・技術者倫理</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr><tr class="zero-row"><td class="small-cell">標準化関連</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td style="background:#f8fafc;color:#cbd5e1">—</td><td class="total-td" style="background:#f1f5f9;color:#94a3b8">—</td></tr></tbody>
+      </table>
+    </div>
+  </div></div></div></div>
+
+</div>
+
+<script>
+function scrollSys(name,btn){
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  if(name==='all'){window.scrollTo({top:0,behavior:'smooth'});return;}
+  const el=document.querySelector(`[data-system="${name}"]`);
+  if(el){const y=el.getBoundingClientRect().top+window.scrollY-52;window.scrollTo({top:y,behavior:'smooth'});}
+}
+document.querySelectorAll('.dai-chip').forEach(c=>{
+  c.onclick=()=>{
+    const el=document.getElementById('dai-'+c.dataset.dai);
+    if(el){const y=el.getBoundingClientRect().top+window.scrollY-52;window.scrollTo({top:y,behavior:'smooth'});}
+  };
+});
+function toggleZero(cb){
+  document.querySelectorAll('.zero-row').forEach(r=>{r.style.display=cb.checked?'':'none';});
+}
+document.addEventListener('DOMContentLoaded',()=>{
+  document.querySelectorAll('.zero-row').forEach(r=>r.style.display='none');
+});
+</script>
+</body></html>
