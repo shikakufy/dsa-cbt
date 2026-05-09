@@ -7,6 +7,14 @@ import { useSEO } from './hooks/useSEO';
 // トップページ・新着情報
 const TOP_NEWS_ITEMS = [
   {
+    id: '2026-05-09-ronjutsu-release',
+    dateISO: '2026-05-09',
+    dateLabel: '2026.5.9',
+    category: 'サービス',
+    title: '新サービス「論述」をリリースしました。',
+    href: 'https://ronjutsu.digitalskillacademy.co.jp/',
+  },
+  {
     id: '2026-03-22-ap-exam-trend',
     dateISO: '2026-03-22',
     dateLabel: '2026.3.22',
@@ -154,9 +162,21 @@ function App() {
 
             <div className="service-grid">
               <div className="service-card">
-                <div className="service-icon" aria-hidden="true">📘</div>
+                <div className="service-icon" aria-hidden="true">🎯</div>
                 <div className="service-content">
                   <span className="service-number">01</span>
+                  <h3>パーソナル学習サイト RonSaiten<span>Personal Learning Site</span></h3>
+                  <p className="catchphrase">あなたの論文をAIが採点・添削・助言</p>
+                  <p className="description">
+                    情報処理推進機構(IPA)の高度試験対策に特化したAI採点サービスです。過去問と採点基準を徹底的に学習したエンジンが、合格答案との差を明確にし、あなたの文章を直接添削して合格へ導きます。
+                  </p>
+                </div>
+              </div>
+
+              <div className="service-card">
+                <div className="service-icon" aria-hidden="true">📘</div>
+                <div className="service-content">
+                  <span className="service-number">02</span>
                   <h3>出版<span>Publishing</span></h3>
                   <p className="catchphrase">ITエンジニアの「知」を支える、良質なコンテンツの創出</p>
                   <p className="description">
@@ -168,23 +188,11 @@ function App() {
               <div className="service-card">
                 <div className="service-icon" aria-hidden="true">👥</div>
                 <div className="service-content">
-                  <span className="service-number">02</span>
+                  <span className="service-number">03</span>
                   <h3>法人向け研修<span>Training</span></h3>
                   <p className="catchphrase">組織の課題に即した、完全オーダーメイドの教育プログラム</p>
                   <p className="description">
                     企業のニーズに合わせ、ITスキルからマインドセットまで柔軟な研修を実施します。単なる知識の伝達に留まらず、現場で即戦力として活かせる実践的な学びを提供します。
-                  </p>
-                </div>
-              </div>
-
-              <div className="service-card">
-                <div className="service-icon" aria-hidden="true">📈</div>
-                <div className="service-content">
-                  <span className="service-number">03</span>
-                  <h3>DXコンサルティング<span>DX Consulting</span></h3>
-                  <p className="catchphrase">変革のパートナーとして、戦略の実行を伴走支援</p>
-                  <p className="description">
-                    企業のDX（デジタルトランスフォーメーション）施策を成功へ導くため、共に歩むパートナーとして支援します。戦略策定から現場への定着まで、実効性のあるソリューションを提案します。
                   </p>
                 </div>
               </div>
