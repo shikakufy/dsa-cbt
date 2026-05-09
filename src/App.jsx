@@ -11,7 +11,7 @@ const TOP_NEWS_ITEMS = [
     dateISO: '2026-05-09',
     dateLabel: '2026.5.9',
     category: 'サービス',
-    title: '新サービス「論述」をリリースしました。',
+    title: '新サービス「RonSaiten」をリリースしました。',
     href: 'https://ronjutsu.digitalskillacademy.co.jp/',
   },
   {
