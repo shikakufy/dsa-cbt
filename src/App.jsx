@@ -32,7 +32,7 @@ function App() {
 
   useSEO({
     title: null, // トップページはデフォルトタイトルを使用
-    description: '情報処理技術者試験などIT資格の学びから法人研修まで。書籍と学びの場で、高度IT人材の成長を支えます。',
+    description: '情報処理技術者試験をはじめとするIT資格対策の教育コンテンツを企画・制作・出版。書籍と学びの場で、高度IT人材の成長を支えます。',
     path: '/',
   });
 
@@ -185,17 +185,6 @@ function App() {
                 </div>
               </div>
 
-              <div className="service-card">
-                <div className="service-icon" aria-hidden="true">👥</div>
-                <div className="service-content">
-                  <span className="service-number">03</span>
-                  <h3>法人向け研修<span>Training</span></h3>
-                  <p className="catchphrase">組織の課題に即した、完全オーダーメイドの教育プログラム</p>
-                  <p className="description">
-                    企業のニーズに合わせ、ITスキルからマインドセットまで柔軟な研修を実施します。単なる知識の伝達に留まらず、現場で即戦力として活かせる実践的な学びを提供します。
-                  </p>
-                </div>
-              </div>
             </div>
           </section>
 
@@ -262,7 +251,7 @@ function App() {
                     <span className="dot"></span>
                     <div className="history-content">
                       <strong>デジタルスキルアカデミー | CEO</strong>
-                      <p>15歳からのIT学習経験と産・官・学での実績を背景に、技術書・教材書籍の出版および教育コンサルティングを行う会社として創業。</p>
+                      <p>15歳からのIT学習経験と産・官・学での実績を背景に、技術書・教材書籍などの教育コンテンツの企画・制作・出版を行う会社として創業。</p>
                     </div>
                   </div>
                 </div>
@@ -297,8 +286,6 @@ function App() {
                     <td>
                       <ul className="business-list">
                         <li>デジタルスキル及び情報技術に関する教育コンテンツの企画、制作、出版及び販売</li>
-                        <li>法人向けIT・DX研修の企画・運営</li>
-                        <li>企業のDX施策における伴走支援・コンサルティング</li>
                       </ul>
                     </td>
                   </tr>
@@ -309,7 +296,7 @@ function App() {
 
           <section id="contact" style={{ padding: '100px 0', textAlign: 'center' }}>
             <h2>お問い合わせ</h2>
-            <p>導入相談や研修のご依頼はこちらから</p>
+            <p>お気軽にお問い合わせください</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ display: 'inline-block', padding: '15px 40px', marginTop: '20px' }}>お問い合わせフォームを開く</a>
           </section>
         </div>
