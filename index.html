@@ -24,6 +24,20 @@
     <meta name="twitter:description" content="情報処理技術者試験などIT資格の学びから法人研修まで。書籍と学びの場で、高度IT人材の成長を支えます。" />
     <title>デジタルスキルアカデミー合同会社</title>
     <meta name="description" content="情報処理技術者試験などIT資格の学びから法人研修まで。書籍と学びの場で、高度IT人材の成長を支えます。" />
+    <script>
+      (function(){
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored) {
+            document.documentElement.setAttribute('data-theme', stored);
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+          }
+        } catch (e) {
+          /* ignore */
+        }
+      })();
+    </script>
     <meta name="google-site-verification" content="7FNboWV_gZOcdODyabmySBhceZAcU-RjfZCU-txsjZk" />
     <link rel="canonical" href="https://digitalskillacademy.co.jp/" />
     <script type="application/ld+json" id="org-ld">

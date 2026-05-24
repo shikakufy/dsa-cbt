@@ -74,7 +74,7 @@ function App() {
 
   return (
     <div className="top-page-root">
-      <header style={headerStyle}>
+      <header className="site-header" style={headerStyle}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px' }}>
           <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
             <a href="/" className="logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMenuOpen(false); }}>
@@ -110,7 +110,7 @@ function App() {
       </header>
 
       <main className="home-main" style={{ paddingTop: 0 }}>
-        <section className="hero" style={{ position: 'relative', width: '100%', height: '100vh', minHeight: '100dvh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: 'linear-gradient(135deg, #f8fafc 0%, #ffffff 100%)', overflow: 'hidden' }}>
+        <section className="hero" style={{ position: 'relative', width: '100%', height: '100vh', minHeight: '100dvh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: 'var(--hero-bg, linear-gradient(135deg, #f8fafc 0%, #ffffff 100%))', overflow: 'hidden' }}>
           <video
             src="/heromovie.mp4"
             autoPlay
@@ -120,8 +120,8 @@ function App() {
             onEnded={() => setHasHeroVideoCompleted(true)}
             style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.2, pointerEvents: 'none', transform: 'translateZ(0)' }}
           />
-          <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', color: '#002B5B', lineHeight: '1.2', position: 'relative', zIndex: 1 }}>「学び」をエンジニアリングする。</h1>
-          <p style={{ fontSize: '1.2rem', color: '#475569', marginTop: '24px', maxWidth: '700px', position: 'relative', zIndex: 1 }}>情報処理技術者試験をはじめとする、高度IT人材育成のための書籍・学びの場をプロデュースします。</p>
+          <h1 className="hero-title" style={{ position: 'relative', zIndex: 1 }}>「学び」をエンジニアリングする。</h1>
+          <p className="hero-sub" style={{ marginTop: '24px', maxWidth: '700px', position: 'relative', zIndex: 1 }}>情報処理技術者試験をはじめとする、高度IT人材育成のための書籍・学びの場をプロデュースします。</p>
         </section>
 
         <section id="news" className="news-section" aria-labelledby="news-heading">

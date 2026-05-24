@@ -1,12 +1,5 @@
-    /* 1. 基本設定（タイポグラフィと色） */
-    :root {
-      --text-main: #111827; /* 真っ黒ではない濃いグレー */
-      --text-sub: #4b5563;
-      --bg-color: #ffffff;
-      --card-bg: #f3f4f6;
-      --primary-color: #000000;
-      --font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-    }
+    /* Import centralized design tokens (Morphous Basalt) */
+    @import './styles/tokens.css';
 
     body {
       margin: 0;

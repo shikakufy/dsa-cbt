@@ -1,0 +1,62 @@
+/* Morphous Basalt design tokens (light by default, dark via [data-theme="dark"]) */
+:root {
+  /* Colors (light mode) */
+  --color-basalt-black: #171717; /* Basalt Black */
+  --color-column-grey: #3f4442; /* Column Grey */
+  --color-ash-surface: #f4f2ed; /* Ash Surface */
+  --color-lichen-green: #7f9164; /* Lichen Green */
+  --color-mineral-line: #c4c7bd; /* Mineral Line */
+  --color-ember-error: #b4533c; /* Ember Error */
+
+  --text-main: var(--color-basalt-black);
+  --text-sub: #4b5563;
+  --bg-color: var(--color-ash-surface);
+  --card-bg: #ffffff;
+  --primary-color: var(--color-basalt-black);
+
+  /* Typography */
+  --font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  --type-scale-1: 4rem; /* h1 */
+  --type-scale-2: 2.5rem; /* h2 */
+  --type-base: 16px;
+
+  /* Spacing & radii */
+  --space-xxl: 6rem;
+  --space-xl: 3rem;
+  --space-md: 1rem;
+  --radius-1: 8px;
+  --radius-2: 12px;
+
+  /* Elevation */
+  --shadow-1: 0 6px 18px rgba(16,20,55,0.06);
+
+  /* Misc */
+  --max-content-width: 1200px;
+}
+
+/* Dark theme overrides */
+:root[data-theme="dark"], [data-theme="dark"] {
+  --color-void-basalt: #101211; /* Void Basalt (deep) */
+  --color-panel-stone: #1d201e;
+  --color-column-grey: #3f4442;
+  --color-ash-text: #e7e5dc;
+  --color-lichen-green: #91a36d;
+  --color-mineral-line-dark: #5d665d;
+
+  --text-main: var(--color-ash-text);
+  --text-sub: #c9c9bf;
+  --bg-color: var(--color-void-basalt);
+  --card-bg: #151515;
+  --primary-color: var(--color-void-basalt);
+}
+
+/* Utility tokens for easy reference */
+.theme-light {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}
+
+.theme-dark {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+}

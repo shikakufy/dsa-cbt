@@ -225,24 +225,8 @@
   /* Center main content and give the page some horizontal breathing room */
   .note-hero, .posts-section, .features { width: 100%; }
 
-  /* --- base layout from provided HTML --- */
-  :root {
-    --text-main: #111827;
-    --text-sub: #4b5563;
-    --bg-color: #ffffff;
-    --card-bg: #f3f4f6;
-    --primary-color: #000000;
-    --font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-  }
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family);
-    color: var(--text-main);
-    background-color: var(--bg-color);
-    line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
-  }
+  /* Import centralized design tokens (Morphous Basalt) */
+  @import './styles/tokens.css';
   .container {
     max-width: 1080px;
     margin: 0 auto;
