@@ -87,6 +87,10 @@ export default function BlogPost() {
     );
   }
 
+  if (id === '2') {
+    return <BlogPostPDExam meta={meta} />;
+  }
+
   if (id !== '1') {
     return (
       <main className="blog-page-main container">
@@ -99,6 +103,81 @@ export default function BlogPost() {
   }
 
   return <BlogPostReport1 meta={meta} />;
+}
+
+function BlogPostPDExam({ meta }) {
+  return (
+    <main className="blog-page-main">
+      <article className="blog-article container">
+        <header className="blog-article-header">
+          <p className="blog-article-meta">
+            <time dateTime={meta.dateISO}>{meta.dateLabel}</time>
+            <span className="news-badge">{meta.category}</span>
+          </p>
+          <h1 className="blog-article-title">{meta.title}</h1>
+        </header>
+
+        <div className="blog-article-intro">
+          <p>
+            2026年3月31日、経済産業省とIPA（独立行政法人 情報処理推進機構）は「情報処理技術者試験における試験区分体系などの見直し（案）」を公表しました。この見直しの目玉が、2027年度に新設が予定されている
+            <strong>「プロフェッショナルデジタルスキル試験（仮称）」</strong>
+            です。SNSやブログでは略称の
+            <strong>「PD試験」</strong>
+            としても呼ばれ始めています。現行の応用情報技術者試験・高度試験を受験予定の方にとっては、学習計画に直結する重要な制度変更なので、公表されている情報を一次情報ベースで整理しておきます。
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>プロフェッショナルデジタルスキル試験（PD試験）とは</h2>
+          <p>
+            プロフェッショナルデジタルスキル試験は、現行の<strong>応用情報技術者試験</strong>と各分野の<strong>高度試験</strong>を大括り化・再編するかたちで新設される試験区分です。デジタルスキル標準Ver.2.0のスキルレベル4〜5に対応する内容とされ、難易度は現行の応用情報〜高度試験と同等以上になる見込みです。
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>3つの試験区分（PD-M／PD-D／PD-S）</h2>
+          <ul className="blog-takeaways">
+            <li>
+              <strong>PD-M（プロフェッショナルデジタルスキル〈マネジメント〉試験・仮称）</strong>
+              ：戦略・変革・サービス・プロジェクト・ガバナンスなどマネジメント領域を横断する区分。
+            </li>
+            <li>
+              <strong>PD-D（プロフェッショナルデジタルスキル〈データ・AI〉試験・仮称）</strong>
+              ：データ活用・AI利活用に関する領域を扱う区分。
+            </li>
+            <li>
+              <strong>PD-S（プロフェッショナルデジタルスキル〈システム〉試験・仮称）</strong>
+              ：アーキテクチャ・クラウド・ネットワーク・IoT・組込み・開発・運用などシステム領域を横断する区分。
+            </li>
+          </ul>
+          <p>
+            あわせて、AI活用に必要なデータの整備・管理スキルを問う<strong>「データマネジメント試験（仮称）」</strong>も新設される予定です。
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>出題形式とスケジュール</h2>
+          <p>
+            現行の高度試験で特徴的だった論述式・記述式の出題は、新試験では原則として廃止され、全区分がCBT（コンピュータ使用試験）方式に移行する見込みです。現行制度は2026年度で終了し、新制度は2027年度から順次開始される予定で、ITパスポート・情報セキュリティマネジメント・基本情報技術者試験が2027年春ごろ、データマネジメント試験・プロフェッショナルデジタルスキル試験（PD試験）が2027年夏〜秋ごろに開始されるとの見方が有力です。
+          </p>
+          <p className="blog-intro-note">
+            ※ 名称・区分・スケジュールはいずれも2026年9月時点の公表内容にもとづく「仮称・予定」です。シラバス案は今後もバージョンアップされる見込みのため、最新情報は必ず
+            {' '}
+            <a href="https://www.ipa.go.jp/shiken/minaoshi/index.html" target="_blank" rel="noopener noreferrer">IPA公式サイト「試験制度の見直しについて」</a>
+            {' '}
+            でご確認ください。
+          </p>
+
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>受験予定の方への影響</h2>
+          <p>
+            論述式が中心だった現行の高度試験とは出題形式が大きく変わるため、これから学習を始める方は「現行制度で受験し切るか」「新制度（PD試験）を待つか」の判断が必要になります。当社では、応用情報技術者試験の出題傾向分析（
+            <Link to="/blog/1">過去5年間の出題傾向レポート</Link>
+            ）のような一次データにもとづくコンテンツと、論文添削AIサービス「RonSaiten」を通じて、こうした制度変更の情報も継続してお届けしていきます。
+          </p>
+        </div>
+
+        <p className="blog-article-footer-nav">
+          <Link to="/blog" className="blog-back-link">
+            ← ブログ一覧
+          </Link>
+        </p>
+      </article>
+    </main>
+  );
 }
 
 function BlogPostReport1({ meta }) {
