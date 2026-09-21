@@ -1,53 +1,80 @@
-/* Morphous Basalt design tokens (light by default, dark via [data-theme="dark"]) */
+/* Warm Paper design tokens — 生成り紙・活版インクを基調にした温かみのある配色 */
 :root {
-  /* Colors (light mode) */
-  --color-basalt-black: #171717; /* Basalt Black */
-  --color-column-grey: #3f4442; /* Column Grey */
-  --color-ash-surface: #f4f2ed; /* Ash Surface */
-  --color-lichen-green: #7f9164; /* Lichen Green */
-  --color-mineral-line: #c4c7bd; /* Mineral Line */
-  --color-ember-error: #b4533c; /* Ember Error */
+  /* Colors (light / default) */
+  --color-ink: #2a2118;         /* 活版インク */
+  --color-ink-soft: #5b4e3e;    /* 本文サブ */
+  --color-paper: #faf7f0;       /* 生成り紙 */
+  --color-paper-alt: #f3ebda;   /* セクション地色（少し濃いめの紙） */
+  --color-card: #fffdf7;        /* カード面 */
+  --color-line: #dccfaf;        /* 罫線・ボーダー */
+  --color-line-soft: #e9e0c8;   /* うすい罫線 */
+  --color-red: #c15d46;         /* 朱色（プライマリアクセント） */
+  --color-red-deep: #9c4a36;    /* 朱色（ホバー・濃色） */
+  --color-indigo: #35507a;      /* 藍 */
+  --color-gold: #c9a227;        /* からし */
+  --color-green: #6b7f4f;       /* 苔緑 */
+  --color-footer-bg: #2a2118;
+  --color-footer-text: #f1e6cf;
 
-  --text-main: var(--color-basalt-black);
-  --text-sub: #4b5563;
-  --bg-color: var(--color-ash-surface);
-  --card-bg: #ffffff;
-  --primary-color: var(--color-basalt-black);
+  --text-main: var(--color-ink);
+  --text-sub: var(--color-ink-soft);
+  --bg-color: var(--color-paper);
+  --card-bg: var(--color-card);
+  --primary-color: var(--color-red);
+  --accent-color: var(--color-indigo);
 
   /* Typography */
-  --font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-  --type-scale-1: 4rem; /* h1 */
-  --type-scale-2: 2.5rem; /* h2 */
+  --font-display: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  --type-scale-1: 3rem; /* h1 */
+  --type-scale-2: 2rem; /* h2 */
   --type-base: 16px;
 
   /* Spacing & radii */
   --space-xxl: 6rem;
   --space-xl: 3rem;
   --space-md: 1rem;
-  --radius-1: 8px;
-  --radius-2: 12px;
+  --radius-1: 12px;
+  --radius-2: 20px;
+  --radius-pill: 999px;
 
   /* Elevation */
-  --shadow-1: 0 6px 18px rgba(16,20,55,0.06);
+  --shadow-1: 0 6px 20px rgba(42, 33, 24, 0.06);
+
+  /* Texture: 紙にドットを刷ったようなテクスチャ */
+  --texture-dot: radial-gradient(circle, rgba(150, 120, 80, 0.14) 1px, transparent 1.5px);
+  --texture-dot-size: 15px 15px;
 
   /* Misc */
   --max-content-width: 1200px;
 }
 
-/* Dark theme overrides */
+/* Dark theme overrides（システムのダークモード設定に追従） */
 :root[data-theme="dark"], [data-theme="dark"] {
-  --color-void-basalt: #101211; /* Void Basalt (deep) */
-  --color-panel-stone: #1d201e;
-  --color-column-grey: #3f4442;
-  --color-ash-text: #e7e5dc;
-  --color-lichen-green: #91a36d;
-  --color-mineral-line-dark: #5d665d;
+  --color-ink: #efe6d3;
+  --color-ink-soft: #cbbfa2;
+  --color-paper: #201a13;
+  --color-paper-alt: #2a2219;
+  --color-card: #26201699;
+  --color-card: #262016;
+  --color-line: #4a3f2e;
+  --color-line-soft: #3a3122;
+  --color-red: #e07a5f;
+  --color-red-deep: #f0967d;
+  --color-indigo: #7f9bc6;
+  --color-gold: #d9b64f;
+  --color-green: #93a877;
+  --color-footer-bg: #14100b;
+  --color-footer-text: #efe6d3;
 
-  --text-main: var(--color-ash-text);
-  --text-sub: #c9c9bf;
-  --bg-color: var(--color-void-basalt);
-  --card-bg: #151515;
-  --primary-color: var(--color-void-basalt);
+  --text-main: var(--color-ink);
+  --text-sub: var(--color-ink-soft);
+  --bg-color: var(--color-paper);
+  --card-bg: var(--color-card);
+  --primary-color: var(--color-red);
+  --accent-color: var(--color-indigo);
+
+  --texture-dot: radial-gradient(circle, rgba(239, 230, 211, 0.08) 1px, transparent 1.5px);
 }
 
 /* Utility tokens for easy reference */

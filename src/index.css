@@ -7,6 +7,8 @@
       font-family: var(--font-family);
       color: var(--text-main);
       background-color: var(--bg-color);
+      background-image: var(--texture-dot);
+      background-size: var(--texture-dot-size);
       line-height: 1.8;
       -webkit-font-smoothing: antialiased;
     }
@@ -27,7 +29,8 @@
     }
 
     .logo {
-      font-weight: bold;
+      font-family: var(--font-display);
+      font-weight: 700;
       font-size: 1.1rem;
       color: var(--text-main);
       text-decoration: none;
@@ -53,18 +56,21 @@
     }
 
     .btn-primary {
-      background-color: var(--primary-color);
-      color: #ffffff;
+      font-family: var(--font-display);
+      background-color: var(--color-red);
+      color: #fffdf7;
       padding: 12px 24px;
-      border-radius: 30px;
+      border-radius: var(--radius-pill);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
       font-size: 0.9rem;
-      transition: opacity 0.2s ease;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
     }
 
     .btn-primary:hover {
-      opacity: 0.8;
+      background-color: var(--color-red-deep);
+      transform: translateY(-2px);
     }
 
     /* 3. ヒーローセクション（メインビジュアル） */
@@ -74,15 +80,16 @@
     }
 
     .hero h1 {
-      font-size: 4rem;
+      font-family: var(--font-display);
+      font-size: 3rem;
       font-weight: 800;
-      line-height: 1.2;
+      line-height: 1.55;
       margin: 0 0 30px;
-      letter-spacing: -0.05em;
+      letter-spacing: 0.01em;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--text-sub);
       margin-bottom: 40px;
     }
@@ -93,10 +100,11 @@
     }
 
     section h2 {
-      font-size: 2.5rem;
-      font-weight: bold;
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
       margin-bottom: 60px;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.01em;
     }
 
     /* 5. What we do (カードレイアウト) */
@@ -108,8 +116,9 @@
 
     .card {
       background-color: var(--card-bg);
+      border: 1px solid var(--color-line);
       padding: 50px 40px;
-      border-radius: 16px;
+      border-radius: var(--radius-2);
     }
 
     .card h3 {
@@ -125,12 +134,12 @@
 
     /* 6. Latest news (リストレイアウト) */
     .news-item {
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid var(--color-line-soft);
       padding: 40px 0;
     }
 
     .news-item:last-child {
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid var(--color-line-soft);
     }
 
     .news-item h3 {
@@ -142,16 +151,3 @@
       margin: 0;
       color: var(--text-sub);
     }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}

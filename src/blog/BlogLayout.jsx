@@ -41,7 +41,7 @@ export default function BlogLayout() {
     left: 0,
     right: 0,
     zIndex: 1000,
-    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    backgroundColor: 'rgba(255, 253, 247, 0.85)',
     backdropFilter: 'blur(10px)',
     transition: 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out, box-shadow 0.3s ease',
     transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
@@ -57,9 +57,12 @@ export default function BlogLayout() {
           style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px' }}
         >
           <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
-              デジタルスキルアカデミー
-              <span>学びをエンジニアリングする出版社</span>
+            <Link to="/" className="logo" style={{ flexDirection: 'row', alignItems: 'center', gap: '12px' }} onClick={() => setIsMenuOpen(false)}>
+              <span aria-hidden="true" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '32px', height: '32px', borderRadius: '9px', background: 'var(--color-red)', color: '#fffdf7', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '13px', flexShrink: 0 }}>学</span>
+              <span style={{ display: 'flex', flexDirection: 'column' }}>
+                デジタルスキルアカデミー
+                <span>学びをエンジニアリングする出版社</span>
+              </span>
             </Link>
             <button
               type="button"

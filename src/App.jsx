@@ -28,7 +28,6 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [hasHeroVideoCompleted, setHasHeroVideoCompleted] = useState(false);
 
   useSEO({
     title: null, // トップページはデフォルトタイトルを使用
@@ -52,19 +51,18 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
-  const isTopHeroPlayback = !hasHeroVideoCompleted;
   const headerStyle = {
     position: 'fixed',
     top: 0,
     left: 0,
     right: 0,
     zIndex: 1000,
-    backgroundColor: isTopHeroPlayback ? 'transparent' : 'rgba(255, 255, 255, 0.7)',
-    backdropFilter: isTopHeroPlayback ? 'none' : 'blur(10px)',
-    transition: 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out, background-color 5s ease, backdrop-filter 5s ease, box-shadow 5s ease',
+    backgroundColor: '#fffdf7',
+    backdropFilter: 'blur(10px)',
+    transition: 'transform 0.4s ease-in-out, opacity 0.4s ease-in-out',
     transform: isVisible ? 'translateY(0)' : 'translateY(-100%)',
     opacity: isVisible ? 1 : 0,
-    boxShadow: isTopHeroPlayback ? 'none' : '0 2px 10px rgba(0,0,0,0.05)',
+    boxShadow: '0 2px 10px rgba(42,33,24,0.05)',
   };
 
   const scrollToSection = (id) => {
@@ -77,9 +75,12 @@ function App() {
       <header className="site-header" style={headerStyle}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '80px' }}>
           <div className="logo-group" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <a href="/" className="logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMenuOpen(false); }}>
-              デジタルスキルアカデミー
-              <span>学びをエンジニアリングする出版社</span>
+            <a href="/" className="logo" style={{ flexDirection: 'row', alignItems: 'center', gap: '12px' }} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMenuOpen(false); }}>
+              <span aria-hidden="true" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px', borderRadius: '10px', background: 'var(--color-red)', color: '#fffdf7', fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: '15px', flexShrink: 0 }}>学</span>
+              <span style={{ display: 'flex', flexDirection: 'column' }}>
+                デジタルスキルアカデミー
+                <span>学びをエンジニアリングする出版社</span>
+              </span>
             </a>
             <button
               className="mobile-toggle"
@@ -94,7 +95,7 @@ function App() {
             <a href="#company" onClick={(e) => { e.preventDefault(); scrollToSection('company'); }}>会社概要</a>
             <a href="#ceo-message" onClick={(e) => { e.preventDefault(); scrollToSection('ceo-message'); }}>私たちについて</a>
             <Link to="/blog">ブログ</Link>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
+            <a className="nav-contact-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">お問い合わせ</a>
           </nav>
         </div>
 
@@ -110,18 +111,27 @@ function App() {
       </header>
 
       <main className="home-main" style={{ paddingTop: 0 }}>
-        <section className="hero" style={{ position: 'relative', width: '100%', height: '100vh', minHeight: '100dvh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', background: 'var(--hero-bg, linear-gradient(135deg, #f8fafc 0%, #ffffff 100%))', overflow: 'hidden' }}>
-          <video
-            src="/heromovie.mp4"
-            autoPlay
-            muted
-            playsInline
-            aria-hidden="true"
-            onEnded={() => setHasHeroVideoCompleted(true)}
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.2, pointerEvents: 'none', transform: 'translateZ(0)' }}
-          />
-          <h1 className="hero-title" style={{ position: 'relative', zIndex: 1 }}>「学び」をエンジニアリングする。</h1>
-          <p className="hero-sub" style={{ marginTop: '24px', maxWidth: '700px', position: 'relative', zIndex: 1 }}>情報処理技術者試験をはじめとする、高度IT人材育成のための書籍・学びの場をプロデュースします。</p>
+        <section className="hero" style={{ position: 'relative', width: '100%', padding: '168px 20px 96px' }}>
+          <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '48px', flexWrap: 'wrap' }}>
+            <div style={{ maxWidth: '600px' }}>
+              <div className="hero-eyebrow">DIGITAL SKILL ACADEMY</div>
+              <h1 className="hero-title">「学び」を<br />エンジニアリングする。</h1>
+              <p className="hero-sub">情報処理技術者試験をはじめとする、高度IT人材育成のための書籍・学びの場をプロデュースします。</p>
+              <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap', marginTop: '8px' }}>
+                <a href="#what-we-do" className="btn-primary" onClick={(e) => { e.preventDefault(); scrollToSection('what-we-do'); }}>事業内容を見る</a>
+                <a href="#ceo-message" className="btn-outline" onClick={(e) => { e.preventDefault(); scrollToSection('ceo-message'); }}>代表メッセージ</a>
+              </div>
+            </div>
+            <div className="hero-illustration" aria-hidden="true">
+              <span style={{ height: '76%', background: 'var(--color-red)' }}></span>
+              <span style={{ height: '92%', background: 'var(--color-indigo)' }}></span>
+              <span style={{ height: '62%', background: 'var(--color-gold)' }}></span>
+              <span style={{ height: '84%', background: 'var(--color-green)' }}></span>
+              <span style={{ height: '54%', background: '#e8c9a0' }}></span>
+              <span style={{ height: '70%', background: 'var(--color-red-deep)' }}></span>
+              <span style={{ height: '100%', background: 'var(--color-ink)' }}></span>
+            </div>
+          </div>
         </section>
 
         <section id="news" className="news-section" aria-labelledby="news-heading">
@@ -161,8 +171,8 @@ function App() {
             <h2 className="section-title">事業内容<span>Service</span></h2>
 
             <div className="service-grid">
-              <div className="service-card">
-                <div className="service-icon" aria-hidden="true">🎯</div>
+              <div className="service-card" style={{ '--accent': 'var(--color-red)' }}>
+                <div className="service-icon" aria-hidden="true">論</div>
                 <div className="service-content">
                   <span className="service-number">01</span>
                   <h3>パーソナル学習サイト RonSaiten<span>Personal Learning Site</span></h3>
@@ -173,8 +183,8 @@ function App() {
                 </div>
               </div>
 
-              <div className="service-card">
-                <div className="service-icon" aria-hidden="true">📘</div>
+              <div className="service-card" style={{ '--accent': 'var(--color-indigo)' }}>
+                <div className="service-icon" aria-hidden="true">本</div>
                 <div className="service-content">
                   <span className="service-number">02</span>
                   <h3>出版<span>Publishing</span></h3>
