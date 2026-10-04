@@ -19,9 +19,9 @@
   --primary-color: var(--c-ink);
   --accent-color: var(--c-accent);
 
-  /* Typography — Lora（欧文）+ Noto Serif JP（和文）。出版社らしい、本の組版を思わせるセリフ体で統一 */
-  --font-family: 'Lora', 'Noto Serif JP', serif;
-  --font-display: 'Lora', 'Noto Serif JP', serif;
+  /* Typography — Lato（欧文）+ Noto Sans JP（和文） */
+  --font-family: 'Lato', 'Noto Sans JP', sans-serif;
+  --font-display: 'Lato', 'Noto Sans JP', sans-serif;
   --type-scale-1: 44px;
   --type-scale-2: 26px;
   --type-base: 16px;
