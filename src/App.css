@@ -227,13 +227,11 @@ h1, h2, h3 { font-family: var(--font-display); }
 .ceo-v2-section { padding: var(--section-pad) var(--gutter); display: flex; flex-direction: column; gap: 40px; }
 .ceo-v2-top { display: flex; gap: 40px; }
 .ceo-v2-top .section-label { width: 220px; flex-shrink: 0; }
-.ceo-v2-body { flex-grow: 1; display: flex; gap: 48px; flex-wrap: wrap; }
-.ceo-v2-text { flex: 1 1 420px; display: flex; flex-direction: column; gap: 16px; }
+.ceo-v2-body { flex-grow: 1; display: flex; }
+.ceo-v2-text { max-width: 760px; display: flex; flex-direction: column; gap: 16px; }
 .ceo-v2-tagline { font-family: var(--font-display); font-weight: 700; font-size: 22px; border-bottom: 3px solid var(--c-accent); padding-bottom: 6px; width: fit-content; margin: 0; }
 .ceo-v2-text p { margin: 0; font-size: 15px; line-height: 1.9; color: #333; }
 .ceo-v2-text strong { color: var(--c-ink); }
-.ceo-v2-photo { flex: 0 0 260px; height: 320px; background: #ededed; border-radius: var(--radius-md); overflow: hidden; }
-.ceo-v2-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .ceo-v2-name { font-weight: 700; font-size: 18px; margin: 0 0 4px; }
 .ceo-v2-name span { font-weight: 500; font-size: 13.5px; color: var(--c-sub); margin-left: 10px; }
 .ceo-v2-timeline { display: flex; flex-direction: column; border-left: 2px dashed #000; padding-left: 30px; margin-left: 220px; }
