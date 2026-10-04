@@ -166,6 +166,31 @@ function App() {
           <div className="hero-stage-word">Digital Skill Academy</div>
         </section>
 
+        {/* ---------- News ---------- */}
+        <section id="news" ref={newsRef} className="panel panel--paper news-v2-grid" aria-labelledby="news-heading">
+          <NewsClippings className="news-v2-bg" />
+          <div className="section-label-col" data-fade>
+            <SectionLabel en="(NEWS)" ja="お知らせ" id="news-heading" />
+            <Link to="/blog" className="pill-btn pill-btn--outline pill-btn--sm" style={{ width: 'fit-content' }}>
+              View All<span className="pill-dot" />
+            </Link>
+          </div>
+          <ul className="news-v2-list" style={{ listStyle: 'none', margin: 0, padding: 0 }} data-fade>
+            {TOP_NEWS_ITEMS.map((item) => (
+              <li key={item.id} className="news-v2-item">
+                <time className="news-v2-date" dateTime={item.dateISO}>{item.dateLabel}</time>
+                <span className="news-v2-cat">{item.category}</span>
+                <div className="news-v2-thumb" aria-hidden="true" />
+                {item.href.startsWith('/blog') ? (
+                  <Link className="news-v2-title hover-underline" to={item.href}>{item.title}</Link>
+                ) : (
+                  <a className="news-v2-title hover-underline" href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* ---------- Mission ---------- */}
         <section id="mission-section" ref={missionRef} className="panel panel--paper mission-grid">
           <LibraryAisle className="mission-grid-bg" />
@@ -268,31 +293,6 @@ function App() {
               <dd>デジタルスキル及び情報技術に関する教育コンテンツの企画、制作、出版及び販売</dd>
             </div>
           </dl>
-        </section>
-
-        {/* ---------- News ---------- */}
-        <section id="news" ref={newsRef} className="panel panel--paper news-v2-grid" aria-labelledby="news-heading">
-          <NewsClippings className="news-v2-bg" />
-          <div className="section-label-col" data-fade>
-            <SectionLabel en="(NEWS)" ja="お知らせ" id="news-heading" />
-            <Link to="/blog" className="pill-btn pill-btn--outline pill-btn--sm" style={{ width: 'fit-content' }}>
-              View All<span className="pill-dot" />
-            </Link>
-          </div>
-          <ul className="news-v2-list" style={{ listStyle: 'none', margin: 0, padding: 0 }} data-fade>
-            {TOP_NEWS_ITEMS.map((item) => (
-              <li key={item.id} className="news-v2-item">
-                <time className="news-v2-date" dateTime={item.dateISO}>{item.dateLabel}</time>
-                <span className="news-v2-cat">{item.category}</span>
-                <div className="news-v2-thumb" aria-hidden="true" />
-                {item.href.startsWith('/blog') ? (
-                  <Link className="news-v2-title hover-underline" to={item.href}>{item.title}</Link>
-                ) : (
-                  <a className="news-v2-title hover-underline" href={item.href} target="_blank" rel="noopener noreferrer">{item.title}</a>
-                )}
-              </li>
-            ))}
-          </ul>
         </section>
 
         {/* ---------- Contact + Footer ---------- */}
