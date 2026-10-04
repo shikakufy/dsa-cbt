@@ -1,89 +1,56 @@
-/* Warm Paper design tokens — 生成り紙・活版インクを基調にした温かみのある配色 */
+/* デザイントークン — DESIGN_BRIEF.md 準拠（モノトーン + 藍アクセント） */
 :root {
-  /* Colors (light / default) */
-  --color-ink: #2a2118;         /* 活版インク */
-  --color-ink-soft: #5b4e3e;    /* 本文サブ */
-  --color-paper: #faf7f0;       /* 生成り紙 */
-  --color-paper-alt: #f3ebda;   /* セクション地色（少し濃いめの紙） */
-  --color-card: #fffdf7;        /* カード面 */
-  --color-line: #dccfaf;        /* 罫線・ボーダー */
-  --color-line-soft: #e9e0c8;   /* うすい罫線 */
-  --color-red: #c15d46;         /* 朱色（プライマリアクセント） */
-  --color-red-deep: #9c4a36;    /* 朱色（ホバー・濃色） */
-  --color-indigo: #35507a;      /* 藍 */
-  --color-gold: #c9a227;        /* からし */
-  --color-green: #6b7f4f;       /* 苔緑 */
-  --color-footer-bg: #2a2118;
-  --color-footer-text: #f1e6cf;
+  /* Colors */
+  --c-ink: #000000;      /* 文字・ボタン */
+  --c-paper: #f7f7f7;    /* メインのカード面（オフホワイト） */
+  --c-white: #ffffff;    /* 内側カード・フッター */
+  --c-dark: #1c1c1c;     /* ダークセクション・メニュー背景 */
+  --c-frame: #808080;    /* ページ外枠・パネル間のグレー */
+  --c-line: #000000;     /* 点線区切り */
+  --c-sub: #666666;      /* 本文サブ・キャプション */
+  --c-sub-light: #999999;
+  --c-accent: #2e4374;   /* 藍 — ブランドカラー（シンボル／一部の強調のみ） */
+  --c-accent-ink: #203055;
 
-  --text-main: var(--color-ink);
-  --text-sub: var(--color-ink-soft);
-  --bg-color: var(--color-paper);
-  --card-bg: var(--color-card);
-  --primary-color: var(--color-red);
-  --accent-color: var(--color-indigo);
+  --text-main: var(--c-ink);
+  --text-sub: var(--c-sub);
+  --bg-color: var(--c-frame);
+  --card-bg: var(--c-paper);
+  --primary-color: var(--c-ink);
+  --accent-color: var(--c-accent);
 
   /* Typography */
-  --font-display: 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', 'Hiragino Kaku Gothic ProN', sans-serif;
-  --font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
-  --type-scale-1: 3rem; /* h1 */
-  --type-scale-2: 2rem; /* h2 */
-  --type-base: 16px;
+  --font-family: 'Inter', 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-display: 'Inter', 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --type-scale-1: 40px;
+  --type-scale-2: 24px;
+  --type-base: 14px;
 
   /* Spacing & radii */
+  --radius-sm: 11px;
+  --radius-md: 17px;
+  --radius-pill: 9999px;
+  --frame-gap: 8px;
+  --gutter: 50px;
+  --section-pad: 160px;
   --space-xxl: 6rem;
   --space-xl: 3rem;
   --space-md: 1rem;
-  --radius-1: 12px;
-  --radius-2: 20px;
-  --radius-pill: 999px;
+  --radius-1: 11px;
+  --radius-2: 17px;
 
-  /* Elevation */
-  --shadow-1: 0 6px 20px rgba(42, 33, 24, 0.06);
+  /* Elevation (used sparingly — the brief favours overlap over shadow) */
+  --shadow-1: 0 6px 20px rgba(0, 0, 0, 0.06);
 
-  /* Texture: 紙にドットを刷ったようなテクスチャ */
-  --texture-dot: radial-gradient(circle, rgba(150, 120, 80, 0.14) 1px, transparent 1.5px);
-  --texture-dot-size: 15px 15px;
+  /* Motion */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-base: 0.7s;
+  --dur-hover: 0.3s;
 
-  /* Misc */
   --max-content-width: 1200px;
 }
 
-/* Dark theme overrides（システムのダークモード設定に追従） */
-:root[data-theme="dark"], [data-theme="dark"] {
-  --color-ink: #efe6d3;
-  --color-ink-soft: #cbbfa2;
-  --color-paper: #201a13;
-  --color-paper-alt: #2a2219;
-  --color-card: #26201699;
-  --color-card: #262016;
-  --color-line: #4a3f2e;
-  --color-line-soft: #3a3122;
-  --color-red: #e07a5f;
-  --color-red-deep: #f0967d;
-  --color-indigo: #7f9bc6;
-  --color-gold: #d9b64f;
-  --color-green: #93a877;
-  --color-footer-bg: #14100b;
-  --color-footer-text: #efe6d3;
-
-  --text-main: var(--color-ink);
-  --text-sub: var(--color-ink-soft);
-  --bg-color: var(--color-paper);
-  --card-bg: var(--color-card);
-  --primary-color: var(--color-red);
-  --accent-color: var(--color-indigo);
-
-  --texture-dot: radial-gradient(circle, rgba(239, 230, 211, 0.08) 1px, transparent 1.5px);
-}
-
-/* Utility tokens for easy reference */
 .theme-light {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-}
-
-.theme-dark {
   background-color: var(--bg-color);
   color: var(--text-main);
 }
