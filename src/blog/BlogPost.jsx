@@ -78,12 +78,12 @@ export default function BlogPost() {
 
   if (!meta) {
     return (
-      <main className="blog-page-main container">
+      <div className="blog-page-main container">
         <p className="blog-page-lead">記事が見つかりません。</p>
         <Link to="/blog" className="blog-back-link">
           ブログ一覧へ
         </Link>
-      </main>
+      </div>
     );
   }
 
@@ -93,12 +93,12 @@ export default function BlogPost() {
 
   if (id !== '1') {
     return (
-      <main className="blog-page-main container">
+      <div className="blog-page-main container">
         <p className="blog-page-lead">この記事は準備中です。</p>
         <Link to="/blog" className="blog-back-link">
           ブログ一覧へ
         </Link>
-      </main>
+      </div>
     );
   }
 
@@ -107,7 +107,7 @@ export default function BlogPost() {
 
 function BlogPostPDExam({ meta }) {
   return (
-    <main className="blog-page-main">
+    <div className="blog-page-main">
       <article className="blog-article container">
         <header className="blog-article-header">
           <p className="blog-article-meta">
@@ -126,12 +126,12 @@ function BlogPostPDExam({ meta }) {
             としても呼ばれ始めています。現行の応用情報技術者試験・高度試験を受験予定の方にとっては、学習計画に直結する重要な制度変更なので、公表されている情報を一次情報ベースで整理しておきます。
           </p>
 
-          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>プロフェッショナルデジタルスキル試験（PD試験）とは</h2>
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--c-ink)' }}>プロフェッショナルデジタルスキル試験（PD試験）とは</h2>
           <p>
             プロフェッショナルデジタルスキル試験は、現行の<strong>応用情報技術者試験</strong>と各分野の<strong>高度試験</strong>を大括り化・再編するかたちで新設される試験区分です。デジタルスキル標準Ver.2.0のスキルレベル4〜5に対応する内容とされ、難易度は現行の応用情報〜高度試験と同等以上になる見込みです。
           </p>
 
-          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>3つの試験区分（PD-M／PD-D／PD-S）</h2>
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--c-ink)' }}>3つの試験区分（PD-M／PD-D／PD-S）</h2>
           <ul className="blog-takeaways">
             <li>
               <strong>PD-M（プロフェッショナルデジタルスキル〈マネジメント〉試験・仮称）</strong>
@@ -150,7 +150,7 @@ function BlogPostPDExam({ meta }) {
             あわせて、AI活用に必要なデータの整備・管理スキルを問う<strong>「データマネジメント試験（仮称）」</strong>も新設される予定です。
           </p>
 
-          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>出題形式とスケジュール</h2>
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--c-ink)' }}>出題形式とスケジュール</h2>
           <p>
             現行の高度試験で特徴的だった論述式・記述式の出題は、新試験では原則として廃止され、全区分がCBT（コンピュータ使用試験）方式に移行する見込みです。現行制度は2026年度で終了し、新制度は2027年度から順次開始される予定で、ITパスポート・情報セキュリティマネジメント・基本情報技術者試験が2027年春ごろ、データマネジメント試験・プロフェッショナルデジタルスキル試験（PD試験）が2027年夏〜秋ごろに開始されるとの見方が有力です。
           </p>
@@ -162,7 +162,7 @@ function BlogPostPDExam({ meta }) {
             でご確認ください。
           </p>
 
-          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--color-ink)' }}>受験予定の方への影響</h2>
+          <h2 style={{ fontSize: '1.3rem', margin: '2rem 0 1rem', color: 'var(--c-ink)' }}>受験予定の方への影響</h2>
           <p>
             論述式が中心だった現行の高度試験とは出題形式が大きく変わるため、これから学習を始める方は「現行制度で受験し切るか」「新制度（PD試験）を待つか」の判断が必要になります。当社では、応用情報技術者試験の出題傾向分析（
             <Link to="/blog/1">過去5年間の出題傾向レポート</Link>
@@ -176,7 +176,7 @@ function BlogPostPDExam({ meta }) {
           </Link>
         </p>
       </article>
-    </main>
+    </div>
   );
 }
 
@@ -184,7 +184,7 @@ function BlogPostReport1({ meta }) {
   const { iframeRef, fitIframeHeight } = useReportIframeHeight();
 
   return (
-    <main className="blog-page-main">
+    <div className="blog-page-main">
       <article className="blog-article container">
         <header className="blog-article-header">
           <p className="blog-article-meta">
@@ -243,6 +243,6 @@ function BlogPostReport1({ meta }) {
           </Link>
         </p>
       </article>
-    </main>
+    </div>
   );
 }

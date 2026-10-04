@@ -11,7 +11,7 @@ export default function BlogIndex() {
   });
 
   return (
-    <main className="blog-page-main container">
+    <div className="blog-page-main container">
       <header className="blog-index-header">
         <h1 className="blog-page-title">ブログ</h1>
         <p className="blog-page-lead">試験対策・学びのヒントを発信しています。</p>
@@ -29,6 +29,6 @@ export default function BlogIndex() {
           </li>
         ))}
       </ul>
-    </main>
+    </div>
   );
 }

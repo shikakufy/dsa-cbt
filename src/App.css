@@ -331,6 +331,9 @@ h1, h2, h3 { font-family: var(--font-display); }
 .news-title-link:hover { color: var(--c-accent); }
 .news-title-text { color: var(--c-ink); font-weight: 600; font-size: 1.02rem; line-height: 1.55; }
 
+.blog-panel { overflow: hidden; padding-bottom: 40px; }
+.footer-only-panel { overflow: hidden; }
+
 .blog-page-main { padding-top: 100px; padding-bottom: 0; min-height: 0; }
 .blog-index-header, .blog-article-header { margin-bottom: 2rem; }
 .blog-page-title, .blog-article-title { font-family: var(--font-display); font-size: 1.6rem; color: var(--c-ink); font-weight: 700; line-height: 1.5; margin: 0 0 0.5rem; }
@@ -353,6 +356,25 @@ h1, h2, h3 { font-family: var(--font-display); }
 .blog-back-link { color: var(--c-accent); font-weight: 600; text-decoration: none; }
 .blog-back-link:hover { text-decoration: underline; }
 .site-footer.corporate-footer.blog-page-footer { padding-top: 0.85rem; padding-bottom: 0.85rem; margin-top: 0; }
+
+/* ---------- 利用規約・プライバシーポリシー ---------- */
+.legal-panel { overflow: hidden; padding-top: 100px; padding-bottom: 60px; }
+.legal-content { max-width: 900px; margin: 0 auto; padding: 0 var(--gutter); color: var(--c-sub); line-height: 1.9; font-size: 0.95rem; }
+.legal-title { font-family: var(--font-display); font-size: 1.8rem; color: var(--c-ink); font-weight: 700; margin: 0 0 2rem; }
+.legal-content h3 { font-family: var(--font-display); font-size: 1.1rem; color: var(--c-ink); font-weight: 700; margin: 2rem 0 0.8rem; }
+.legal-content p { margin: 0 0 1.25rem; }
+.legal-content ul { margin: 0 0 1.5rem 1.5rem; padding: 0; }
+.legal-content ul li { margin-bottom: 0.5rem; }
+.legal-content ul li:last-child { margin-bottom: 0; }
+.legal-content a { color: var(--c-accent); text-decoration: underline; }
+.legal-indent-block { margin-left: 1.5rem; margin-bottom: 2rem; font-size: 0.95rem; }
+.legal-indent-block p { margin-bottom: 0.5rem; }
+.legal-enacted { margin-top: 3rem; font-size: 0.9rem; border-top: 1px dashed #000; padding-top: 1.5rem; }
+.legal-back-link { display: inline-block; margin-top: 1rem; }
+
+@media (max-width: 880px) {
+  .legal-panel { padding-top: 80px; }
+}
 
 .profile-page { padding-top: 80px; }
 .profile-inner { display: flex; gap: 32px; align-items: flex-start; max-width: 1000px; }
