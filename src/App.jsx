@@ -13,6 +13,8 @@ import { SiteHeader } from './components/SiteHeader';
 import { HeroBookshelf } from './components/HeroBookshelf';
 import { LibraryAisle } from './components/LibraryAisle';
 import { WritingDesk } from './components/WritingDesk';
+import { StackedBooks } from './components/StackedBooks';
+import { NewsClippings } from './components/NewsClippings';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -264,6 +266,7 @@ function App() {
 
         {/* ---------- 会社概要 ---------- */}
         <section id="company" ref={companyRef} className="panel panel--paper company-v2-section">
+          <StackedBooks className="company-v2-bg" />
           <span className="section-label" data-fade>(COMPANY)</span>
           <dl className="company-v2-table" data-fade>
             <div className="company-v2-row">
@@ -291,6 +294,7 @@ function App() {
 
         {/* ---------- News ---------- */}
         <section id="news" ref={newsRef} className="panel panel--paper news-v2-grid" aria-labelledby="news-heading">
+          <NewsClippings className="news-v2-bg" />
           <div className="section-label-col" data-fade>
             <span className="section-label" id="news-heading">(NEWS)</span>
             <Link to="/blog" className="pill-btn pill-btn--outline pill-btn--sm" style={{ width: 'fit-content' }}>
@@ -314,7 +318,8 @@ function App() {
         </section>
 
         {/* ---------- Contact + Footer ---------- */}
-        <section className="panel panel--white">
+        <section className="panel panel--white contact-footer-section">
+          <HeroBookshelf className="contact-footer-bg" />
           <div className="contact-v2">
             <h2>お気軽にお問い合わせください。</h2>
             <a className="pill-btn" href={CONTACT_FORM} target="_blank" rel="noopener noreferrer">

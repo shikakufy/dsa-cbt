@@ -248,17 +248,19 @@ h1, h2, h3 { font-family: var(--font-display); }
 }
 
 /* ---------- Company ---------- */
-.company-v2-section { padding: var(--section-pad) var(--gutter); display: flex; gap: 40px; }
-.company-v2-section .section-label { width: 220px; flex-shrink: 0; }
-.company-v2-table { flex-grow: 1; border-top: 1px dashed #000; }
+.company-v2-section { position: relative; overflow: hidden; padding: var(--section-pad) var(--gutter); display: flex; gap: 40px; }
+.company-v2-bg { position: absolute; inset: 0; margin: auto; width: min(640px, 70%); height: auto; max-height: 88%; color: #000; opacity: 0.07; pointer-events: none; }
+.company-v2-section .section-label { position: relative; z-index: 1; width: 220px; flex-shrink: 0; }
+.company-v2-table { position: relative; z-index: 1; flex-grow: 1; border-top: 1px dashed #000; }
 .company-v2-row { display: flex; gap: 30px; padding: 20px 0; border-bottom: 1px dashed #000; font-size: 15px; }
 .company-v2-row dt { width: 150px; flex-shrink: 0; font-weight: 700; color: var(--c-accent); margin: 0; }
 .company-v2-row dd { margin: 0; color: #333; line-height: 1.85; }
 
 /* ---------- News ---------- */
-.news-v2-grid { display: flex; gap: 40px; padding: var(--section-pad) var(--gutter); }
-.news-v2-grid .section-label-col { width: 220px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px; }
-.news-v2-list { flex-grow: 1; display: flex; flex-direction: column; }
+.news-v2-grid { position: relative; overflow: hidden; display: flex; gap: 40px; padding: var(--section-pad) var(--gutter); }
+.news-v2-bg { position: absolute; inset: 0; margin: auto; width: min(760px, 78%); height: auto; max-height: 86%; color: #000; opacity: 0.07; pointer-events: none; }
+.news-v2-grid .section-label-col { position: relative; z-index: 1; width: 220px; flex-shrink: 0; display: flex; flex-direction: column; gap: 16px; }
+.news-v2-list { position: relative; z-index: 1; flex-grow: 1; display: flex; flex-direction: column; }
 .news-v2-item { display: flex; align-items: center; gap: 20px; padding: 18px 0; border-bottom: 1px dashed #000; }
 .news-v2-list .news-v2-item:last-child { border-bottom: none; }
 .news-v2-date { font-size: 13.5px; color: var(--c-sub); width: 94px; flex-shrink: 0; }
@@ -268,9 +270,11 @@ h1, h2, h3 { font-family: var(--font-display); }
 .news-v2-title { font-size: 16px; flex-grow: 1; color: #000; }
 
 /* ---------- Contact + Footer ---------- */
-.contact-v2 { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 90px var(--gutter); border-bottom: 1px dashed #000; flex-wrap: wrap; }
+.contact-footer-section { position: relative; overflow: hidden; }
+.contact-footer-bg { position: absolute; inset: 0; margin: auto; width: min(1200px, 90%); height: auto; max-height: 80%; color: #000; opacity: 0.06; pointer-events: none; }
+.contact-v2 { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 90px var(--gutter); border-bottom: 1px dashed #000; flex-wrap: wrap; }
 .contact-v2 h2 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 34px; letter-spacing: 0.01em; max-width: 620px; line-height: 1.5; }
-.footer-v2 { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px var(--gutter); flex-wrap: wrap; }
+.footer-v2 { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px var(--gutter); flex-wrap: wrap; }
 .footer-v2-brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 700; font-size: 15px; letter-spacing: 0.04em; text-transform: uppercase; }
 .footer-v2-nav { display: flex; gap: 26px; font-size: 14px; font-weight: 700; flex-wrap: wrap; }
 .footer-v2-nav a { color: #000; text-decoration: none; }
@@ -297,6 +301,9 @@ h1, h2, h3 { font-family: var(--font-display); }
   }
   .contact-v2 { flex-direction: column; align-items: flex-start; }
   .pill-nav { display: none; }
+  .news-v2-item { flex-wrap: wrap; row-gap: 8px; }
+  .news-v2-thumb { display: none; }
+  .news-v2-title { flex: 1 1 100%; }
 }
 
 @media (max-width: 480px) {
