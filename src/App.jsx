@@ -38,7 +38,7 @@ const TOP_NEWS_ITEMS = [
     dateLabel: '2026.5.9',
     category: 'サービス',
     title: '新サービス「RonSaiten」をリリースしました。',
-    href: 'https://ronjutsu.digitalskillacademy.co.jp/',
+    href: 'https://digitalskillacademy.co.jp/ronsaiten',
   },
   {
     id: '2026-03-22-ap-exam-trend',
@@ -58,7 +58,7 @@ const SERVICES = [
     sub: 'Personal Learning Site',
     catch: 'あなたの論文をAIが採点・添削・助言',
     body: '情報処理推進機構(IPA)の高度試験対策に特化したAI採点サービスです。過去問と採点基準を徹底的に学習したエンジンが、合格答案との差を明確にし、あなたの文章を直接添削して合格へ導きます。',
-    href: 'https://ronjutsu.digitalskillacademy.co.jp/',
+    href: 'https://digitalskillacademy.co.jp/ronsaiten',
   },
   {
     id: 'publishing',
