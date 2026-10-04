@@ -19,12 +19,12 @@
   --primary-color: var(--c-ink);
   --accent-color: var(--c-accent);
 
-  /* Typography */
-  --font-family: 'Inter', 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
-  --font-display: 'Inter', 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
-  --type-scale-1: 40px;
-  --type-scale-2: 24px;
-  --type-base: 14px;
+  /* Typography — 見出しは RocknRoll One（和文・欧文どちらも1書体でカバーできる、太く個性のある書体） */
+  --font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
+  --font-display: 'RocknRoll One', 'Zen Kaku Gothic New', sans-serif;
+  --type-scale-1: 44px;
+  --type-scale-2: 26px;
+  --type-base: 16px;
 
   /* Spacing & radii */
   --radius-sm: 11px;

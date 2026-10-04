@@ -320,7 +320,7 @@ function App() {
           </div>
           <div className="footer-v2">
             <div className="footer-v2-brand">
-              <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 26 26" aria-hidden="true">
                 <rect x="2" y="2" width="22" height="22" rx="7" fill="none" stroke="#2e4374" strokeWidth="1.6" />
                 <path d="M10 8 H14 A5 5 0 0 1 14 18 H10 Z" fill="#000" />
               </svg>
