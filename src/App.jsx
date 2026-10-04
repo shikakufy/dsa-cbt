@@ -11,6 +11,8 @@ import { useScrollFade } from './hooks/useScrollFade';
 import { RevealText } from './components/RevealText';
 import { SiteHeader } from './components/SiteHeader';
 import { HeroBookshelf } from './components/HeroBookshelf';
+import { LibraryAisle } from './components/LibraryAisle';
+import { WritingDesk } from './components/WritingDesk';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,6 +168,7 @@ function App() {
 
         {/* ---------- Mission ---------- */}
         <section id="mission-section" ref={missionRef} className="panel panel--paper mission-grid">
+          <LibraryAisle className="mission-grid-bg" />
           <span className="section-label" data-fade>(MISSION)</span>
           <div className="mission-content" data-fade>
             <RevealText as="h1" className="mission-heading" text={'「学び」を\nエンジニアリングする。'} />
@@ -212,6 +215,7 @@ function App() {
         {/* ---------- 代表メッセージ ---------- */}
         <section id="ceo-message" ref={ceoRef} className="panel panel--paper ceo-v2-section">
           <div className="ceo-v2-top">
+            <WritingDesk className="ceo-v2-top-bg" />
             <span className="section-label" data-fade>(ABOUT)</span>
             <div className="ceo-v2-body" data-fade>
               <div className="ceo-v2-text">
