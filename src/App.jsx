@@ -9,6 +9,7 @@ import { useLenis } from './hooks/useLenis';
 import { useReducedMotion } from './hooks/useReducedMotion';
 import { useScrollFade } from './hooks/useScrollFade';
 import { RevealText } from './components/RevealText';
+import { SectionLabel } from './components/SectionLabel';
 import { SiteHeader } from './components/SiteHeader';
 import { HeroBookshelf } from './components/HeroBookshelf';
 import { LibraryAisle } from './components/LibraryAisle';
@@ -53,7 +54,6 @@ const SERVICES = [
   {
     id: 'ronsaiten',
     accent: '#2e4374',
-    glyph: '論',
     title: 'パーソナル学習サイト RonSaiten',
     sub: 'Personal Learning Site',
     catch: 'あなたの論文をAIが採点・添削・助言',
@@ -63,7 +63,6 @@ const SERVICES = [
   {
     id: 'publishing',
     accent: '#000000',
-    glyph: '本',
     title: '出版',
     sub: 'Publishing',
     catch: 'ITエンジニアの「知」を支える、良質なコンテンツの創出',
@@ -165,17 +164,16 @@ function App() {
             <MarkD />
           </div>
           <div className="hero-stage-word">Digital Skill Academy</div>
-          <p className="hero-stage-hint">人の手で、学びを<br />組み立てている。（仮）</p>
         </section>
 
         {/* ---------- Mission ---------- */}
         <section id="mission-section" ref={missionRef} className="panel panel--paper mission-grid">
           <LibraryAisle className="mission-grid-bg" />
-          <span className="section-label" data-fade>(MISSION)</span>
+          <SectionLabel en="(MISSION)" ja="ミッション" />
           <div className="mission-content" data-fade>
             <RevealText as="h1" className="mission-heading" text={'「学び」を\nエンジニアリングする。'} />
             <p className="mission-body">
-              情報処理技術者試験をはじめとする、高度IT人材育成のための書籍・学びの場をプロデュースします。産・官・学の現場で培った知見を、科学的な教育アプローチで体系化し、ひとりひとりの理解に合わせた学習のかたちをつくっていきます。
+              情報処理技術者試験をはじめとする、高度IT人材育成のための書籍・学びの場をプロデュースします。産・官・学の現場で培った知見を、科学的な教育アプローチで体系化し、ひとりひとりの理解に合わせた学習のかたちをつくっていきます。さらに、その学びを再現性のある形でオープンソース化し、誰もが活用・改良できる知として社会に還元することで、学びそのものが発展し続ける仕組みを育てていきます。
             </p>
           </div>
         </section>
@@ -188,16 +186,13 @@ function App() {
           </svg>
 
           <div className="service-dark-head">
-            <span className="section-label section-label--invert">(SERVICE)</span>
+            <SectionLabel en="(SERVICE)" invert />
             <h2>事業内容</h2>
           </div>
 
           <div className="service-cards-row">
             {SERVICES.map((s) => (
               <article key={s.id} className="service-card">
-                <div className="thumb" aria-hidden="true">
-                  <span style={{ fontFamily: 'var(--font-display)', fontWeight: 900, fontSize: 40, color: s.accent }}>{s.glyph}</span>
-                </div>
                 <h3>
                   {s.title}
                   <small>{s.sub}</small>
@@ -214,52 +209,35 @@ function App() {
           </div>
         </section>
 
-        {/* ---------- 代表メッセージ ---------- */}
+        {/* ---------- 代表紹介 ---------- */}
         <section id="ceo-message" ref={ceoRef} className="panel panel--paper ceo-v2-section">
           <div className="ceo-v2-top">
             <WritingDesk className="ceo-v2-top-bg" />
-            <span className="section-label" data-fade>(ABOUT)</span>
-            <div className="ceo-v2-body" data-fade>
-              <div className="ceo-v2-text">
-                <p className="ceo-v2-tagline">学びをエンジニアリングする</p>
-                <p>私がデジタルに興味を持ったのは15歳の時。地元の工業高校への入学時に購入した「ポケコン」でプログラミングに没頭したことがすべての始まりでした。同時に、現在のITパスポートの源流である「初級システムアドミニストレータ」の学習を通じて、社会を支える技術の仕組みに強く惹かれました。</p>
-                <p>その後、大阪大学大学院で工学を修め、社会人として歩む中で常に感じてきたのは、デジタルの底知れない奥深さと、その変化の速さです。</p>
-                <p>この変化の深さと速さの中で活動するビジネスパーソンに向けて、単なる情報の羅列ではなく、良質な知識を確実に構造化・提供し、実務へと繋げる「確かな仕掛け」が必要であると痛感してきました。</p>
-                <p>私はこれまで、リクルートでの多様な事業開発や、デジタル庁での行政DX推進、そして技術経営（MOT）の研究を通じ、一貫して「技術と組織、そして人の成長」に向き合ってきました。</p>
-                <p>デジタルスキルアカデミーは、現代の知識変遷や技術進展を鑑みたうえで、<strong>「学びをエンジニアリングする」</strong>ことを掲げて創業しました。産・官・学の各現場で培った実践的な知見を、科学的な教育アプローチで体系化し、高度IT人材を育成するための最適な学習媒体・環境・場をプロデュースします。</p>
-                <p>私たちが提供する本や場から得られる「確かな学び」が、皆さんのキャリアと未来をより豊かに、より情熱的なものに変えていく一助となり、私たちがその伴走者となれば幸いです。</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="ceo-v2-name">納富 翔太<span>Shota Nodomi / 代表</span></h3>
-            <div className="ceo-v2-timeline">
-              <div className="ceo-v2-timeline-item">
-                <span className="ceo-v2-timeline-dot" />
-                <strong>国立大学法人 大阪大学大学院 工学研究科</strong>
-                <p>工学の専門性を磨くとともに、デジタルの本質的な面白さを探究。</p>
-              </div>
-              <div className="ceo-v2-timeline-item">
-                <span className="ceo-v2-timeline-dot" />
-                <strong>株式会社リクルート | プロジェクトマネージャー（Project Manager）</strong>
-                <p>HR、住宅、結婚、自動車、社内DXなど多岐にわたる事業領域でプロジェクトマネジメントを経験。アジア・北米の海外開発チームとの協業に従事。</p>
-              </div>
-              <div className="ceo-v2-timeline-item">
-                <span className="ceo-v2-timeline-dot" />
-                <strong>デジタル庁 | プロダクトマネージャーユニット長（Head of Product Management）</strong>
-                <p>国民向け・法人向けの基幹サービス立ち上げおよび運用を歴任。行政におけるPdM・PM組織のマネジメントを牽引。</p>
-              </div>
-              <div className="ceo-v2-timeline-item">
-                <span className="ceo-v2-timeline-dot" />
-                <strong>国立大学法人 東京科学大学 | 技術経営専門職学位課程（MOT）</strong>
-                <p>技術知見を経営・ビジネスの観点から再定義し、技術を価値に変える「仕組み」を学術的に研究。</p>
-              </div>
-              <div className="ceo-v2-timeline-item">
-                <span className="ceo-v2-timeline-dot" />
-                <strong>デジタルスキルアカデミー | CEO</strong>
-                <p>15歳からのIT学習経験と産・官・学での実績を背景に、技術書・教材書籍などの教育コンテンツの企画・制作・出版を行う会社として創業。</p>
-              </div>
+            <SectionLabel en="(ABOUT)" ja="私たちについて" />
+            <div className="about-v2-body" data-fade>
+              <span className="about-v2-title">代表</span>
+              <h3 className="about-v2-name">
+                納富 翔太
+                <span className="about-v2-name-en">Shota Nodomi</span>
+                <a
+                  className="about-v2-linkedin"
+                  href="https://www.linkedin.com/in/nodomishota/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                >
+                  <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+                    <path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+              </h3>
+              <p className="about-v2-bio">
+                株式会社リクルートにてプロダクトマネージャーとして、多様な事業のプロダクト開発を推進。デジタル庁ではプロダクトマネージャーとして行政サービスのデジタル化に携わる。
+              </p>
+              <ul className="about-v2-timeline">
+                <li>2026年、デジタルスキルアカデミー合同会社を設立し、代表に就任。</li>
+                <li>現在、東京科学大学大学院 技術経営専門職学位課程（MOT）に在学中。</li>
+              </ul>
             </div>
           </div>
         </section>
@@ -267,7 +245,7 @@ function App() {
         {/* ---------- 会社概要 ---------- */}
         <section id="company" ref={companyRef} className="panel panel--paper company-v2-section">
           <StackedBooks className="company-v2-bg" />
-          <span className="section-label" data-fade>(COMPANY)</span>
+          <SectionLabel en="(COMPANY)" ja="会社概要" />
           <dl className="company-v2-table" data-fade>
             <div className="company-v2-row">
               <dt>会社名</dt>
@@ -296,7 +274,7 @@ function App() {
         <section id="news" ref={newsRef} className="panel panel--paper news-v2-grid" aria-labelledby="news-heading">
           <NewsClippings className="news-v2-bg" />
           <div className="section-label-col" data-fade>
-            <span className="section-label" id="news-heading">(NEWS)</span>
+            <SectionLabel en="(NEWS)" ja="お知らせ" id="news-heading" />
             <Link to="/blog" className="pill-btn pill-btn--outline pill-btn--sm" style={{ width: 'fit-content' }}>
               View All<span className="pill-dot" />
             </Link>

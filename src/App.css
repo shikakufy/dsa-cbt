@@ -99,7 +99,14 @@ h1, h2, h3 { font-family: var(--font-display); }
 .panel--dark { background: var(--c-dark); color: #fff; }
 .panel--white { background: var(--c-white); }
 
-.section-label { font-size: 15px; font-weight: 700; letter-spacing: 0.02em; }
+.section-label { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.section-label-line { display: block; width: 28px; height: 3px; background: var(--c-accent); transform-origin: left; transform: scaleX(0); transition: transform 0.5s var(--ease-out); }
+.section-label.is-revealed .section-label-line { transform: scaleX(1); }
+.section-label-text { display: block; font-size: clamp(21px, 2.4vw, 26px); font-weight: 700; letter-spacing: 0.01em; color: var(--c-ink); opacity: 0; transform: translateY(6px); transition: opacity 0.5s var(--ease-out) 0.2s, transform 0.5s var(--ease-out) 0.2s; }
+.section-label.is-revealed .section-label-text { opacity: 1; transform: translateY(0); }
+.section-label-text small { display: block; margin-top: 5px; font-size: 12.5px; font-weight: 500; color: var(--c-sub); letter-spacing: 0.06em; }
+.section-label--invert .section-label-text { color: #fff; }
+.section-label--invert .section-label-text small { color: rgba(255, 255, 255, 0.65); }
 
 /* ---------- Header v2 ---------- */
 .site-header-v2 { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; pointer-events: none; }
@@ -179,15 +186,14 @@ h1, h2, h3 { font-family: var(--font-display); }
 .hero-stage-bookshelf {
   position: absolute; inset: 0; margin: auto;
   width: min(1480px, 94%); height: auto; max-height: 72%;
-  color: #000; opacity: 0.1; pointer-events: none;
+  pointer-events: none;
 }
 .hero-stage-mark { position: relative; z-index: 1; animation: hero-breathe 6s ease-in-out infinite; }
 @keyframes hero-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 .hero-stage-word { position: relative; z-index: 1; margin-top: 26px; font-family: var(--font-display); font-weight: 700; font-size: clamp(22px, 2.8vw, 32px); letter-spacing: 0.06em; text-transform: uppercase; }
-.hero-stage-hint { position: absolute; z-index: 1; right: var(--gutter); bottom: 44px; max-width: 240px; text-align: right; font-size: 14px; line-height: 1.9; color: var(--c-sub); }
 
 @media (max-width: 880px) {
-  .hero-stage-bookshelf { opacity: 0.08; max-height: 56%; }
+  .hero-stage-bookshelf { max-height: 56%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -213,9 +219,6 @@ h1, h2, h3 { font-family: var(--font-display); }
   background: #fff; color: #000; border-radius: var(--radius-md); padding: 32px;
   width: 320px; display: flex; flex-direction: column; gap: 16px;
 }
-.service-card .thumb { background: #ededed; border-radius: var(--radius-sm); height: 130px; display: flex; align-items: center; justify-content: center; color: #999; font-size: 12px; overflow: hidden; }
-.service-card .thumb span { transition: transform 0.4s var(--ease-out); display: block; }
-.service-card:hover .thumb span { transform: scale(1.04); }
 .service-card h3 { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 23px; letter-spacing: 0.01em; }
 .service-card h3 small { display: block; font-family: var(--font-family); font-size: 12.5px; font-weight: 500; color: #888; margin-top: 6px; letter-spacing: 0.04em; }
 .service-card p { margin: 0; font-size: 15px; line-height: 1.85; color: #444; }
@@ -229,23 +232,15 @@ h1, h2, h3 { font-family: var(--font-display); }
 .ceo-v2-top { position: relative; overflow: hidden; display: flex; gap: 40px; }
 .ceo-v2-top-bg { position: absolute; inset: 0; margin: auto; width: min(900px, 90%); height: auto; max-height: 94%; color: #000; opacity: 0.07; pointer-events: none; }
 .ceo-v2-top .section-label { position: relative; z-index: 1; width: 220px; flex-shrink: 0; }
-.ceo-v2-body { position: relative; z-index: 1; flex-grow: 1; display: flex; }
-.ceo-v2-text { max-width: 760px; display: flex; flex-direction: column; gap: 16px; }
-.ceo-v2-tagline { font-family: var(--font-display); font-weight: 700; font-size: 22px; border-bottom: 3px solid var(--c-accent); padding-bottom: 6px; width: fit-content; margin: 0; }
-.ceo-v2-text p { margin: 0; font-size: 15px; line-height: 1.9; color: #333; }
-.ceo-v2-text strong { color: var(--c-ink); }
-.ceo-v2-name { font-weight: 700; font-size: 18px; margin: 0 0 4px; }
-.ceo-v2-name span { font-weight: 500; font-size: 13.5px; color: var(--c-sub); margin-left: 10px; }
-.ceo-v2-timeline { display: flex; flex-direction: column; border-left: 2px dashed #000; padding-left: 30px; margin-left: 220px; }
-.ceo-v2-timeline-item { position: relative; padding-bottom: 26px; }
-.ceo-v2-timeline-item:last-child { padding-bottom: 0; }
-.ceo-v2-timeline-dot { position: absolute; left: -36.5px; top: 5px; width: 10px; height: 10px; border-radius: 50%; background: var(--c-accent); }
-.ceo-v2-timeline-item strong { display: block; font-size: 15.5px; margin-bottom: 4px; }
-.ceo-v2-timeline-item p { margin: 0; font-size: 13.5px; color: var(--c-sub); line-height: 1.8; }
-
-@media (max-width: 880px) {
-  .ceo-v2-timeline { margin-left: 0; }
-}
+.about-v2-body { position: relative; z-index: 1; flex-grow: 1; display: flex; flex-direction: column; gap: 4px; max-width: 640px; }
+.about-v2-title { font-weight: 700; font-size: 13px; color: var(--c-accent); letter-spacing: 0.04em; }
+.about-v2-name { display: flex; align-items: baseline; flex-wrap: wrap; gap: 10px; margin: 2px 0 14px; font-weight: 700; font-size: 26px; color: var(--c-ink); }
+.about-v2-name-en { font-weight: 500; font-size: 14px; color: var(--c-sub); }
+.about-v2-linkedin { display: inline-flex; align-items: center; color: var(--c-sub); transition: color 0.2s var(--ease-out); }
+.about-v2-linkedin:hover, .about-v2-linkedin:focus-visible { color: var(--c-accent); }
+.about-v2-bio { margin: 0; font-size: 15px; line-height: 1.9; color: #333; }
+.about-v2-timeline { list-style: none; margin: 22px 0 0; padding: 18px 0 0; border-top: 1px dashed #000; display: flex; flex-direction: column; gap: 10px; }
+.about-v2-timeline li { margin: 0; font-size: 14px; line-height: 1.7; color: var(--c-sub); }
 
 /* ---------- Company ---------- */
 .company-v2-section { position: relative; overflow: hidden; padding: var(--section-pad) var(--gutter); display: flex; gap: 40px; }
