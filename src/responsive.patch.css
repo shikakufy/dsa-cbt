@@ -11,23 +11,17 @@
   padding-right: 20px;
 }
 
-.home-main {
-  padding: 0 !important;
-}
-
-/* --- 2. デスクトップ用ヘッダー設定 --- */
+/* --- 2. デスクトップ用ヘッダー設定（旧ヘッダー：Blog / Terms / Privacy） --- */
 .main-nav {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-/* スマホ用ボタンはPCでは隠す */
 .mobile-toggle {
   display: none;
 }
 
-/* ヘッダー: 外側 header が flex かつ子が container だけだと幅が内容に縮み左寄りになるのを防ぐ */
 .top-page-root > header {
   display: block;
   width: 100%;
@@ -42,7 +36,6 @@
   margin-right: auto;
 }
 
-/* ヘッダー配置: 社名は左、PCメニューは右 */
 .top-page-root header .container {
   display: flex;
   align-items: center;
@@ -72,17 +65,14 @@
 
 /* --- 3. スマホ・タブレット対応 (880px以下) --- */
 @media (max-width: 880px) {
-  /* ヘッダーの縦幅を約2/3に圧縮 */
   .top-page-root > header > .container {
     height: 52px !important;
   }
 
-  /* PC用メニューを強制的に非表示にする */
   .main-nav {
     display: none !important;
   }
 
-  /* ハンバーガーボタンを表示する */
   .mobile-toggle {
     display: block !important;
     font-size: 30px;
@@ -91,10 +81,9 @@
     cursor: pointer;
     padding: 4px 6px;
     line-height: 1;
-    color: var(--color-ink, #2a2118);
+    color: var(--c-ink);
   }
 
-  /* ロゴ左・メニューボタン右 */
   .logo-group {
     max-width: none;
     width: 100%;
@@ -104,10 +93,10 @@
     margin-left: 0;
     margin-right: 0;
   }
-  
+
   .logo-group a {
     font-size: 1.1rem !important;
-    white-space: nowrap; /* 社名を改行させない */
+    white-space: nowrap;
     margin-left: 0 !important;
   }
 
@@ -123,18 +112,13 @@
     padding-right: 20px !important;
   }
 
-  .home-main {
-    padding: 0 !important;
-  }
-
-  /* ハンバーガーメニュー展開時のオーバーレイ */
   .mobile-menu {
     position: fixed;
     top: 52px;
     left: 0;
     width: 100%;
     height: calc(100vh - 52px);
-    background-color: rgba(250, 247, 240, 0.98);
+    background-color: rgba(247, 247, 247, 0.98);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,44 +130,10 @@
 
   .mobile-menu a {
     text-decoration: none;
-    color: var(--color-ink, #2a2118);
+    color: var(--c-ink);
     font-family: var(--font-display);
     font-size: 1.3rem;
-    font-weight: bold;
-  }
-
-  /* ヒーローセクションの調整 */
-  .hero h1 {
-    font-size: 1.9rem !important;
-    padding: 0;
-  }
-
-  .hero .container {
-    flex-direction: column !important;
-    text-align: center;
-  }
-
-  .hero-illustration {
-    height: 160px !important;
-  }
-
-  .hero-eyebrow {
-    text-align: center;
-  }
-
-  /* 会社概要の2列を1列に */
-  .company-profile-grid {
-    grid-template-columns: 1fr !important;
-    gap: 30px !important;
-  }
-
-  /* セクション余白（タブレット） */
-  section {
-    padding: 80px 0 !important;
-  }
-
-  h2 {
-    margin-bottom: 40px !important;
+    font-weight: 900;
   }
 }
 
@@ -193,7 +143,6 @@
     display: none;
   }
 
-  /* ほぼ元の余白を保持、スマホ用に軽微な調整のみ */
   main {
     padding: 120px 20px 60px !important;
   }
@@ -204,31 +153,12 @@
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
+}
 
-  .home-main {
-    padding: 0 !important;
-  }
-
-  section {
-    padding: 60px 0 !important;
-  }
-
-  .hero-illustration {
-    display: none !important;
-  }
-
-  .hero h1 {
-    font-size: 1.6rem !important;
-    margin-bottom: 16px !important;
-  }
-
-  h2 {
-    font-size: 1.6rem !important;
-    margin-bottom: 32px !important;
-  }
-
-  h3 {
-    margin-top: 1.5rem !important;
-    margin-bottom: 0.8rem !important;
+/* --- 5. トップページ v2（ハンバーガーメニューの横幅） --- */
+@media (max-width: 480px) {
+  .menu-drawer {
+    width: 100vw;
+    padding: 0 32px;
   }
 }
