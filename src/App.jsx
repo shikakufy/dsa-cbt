@@ -11,6 +11,8 @@ import { useScrollFade } from './hooks/useScrollFade';
 import { RevealText } from './components/RevealText';
 import { SiteHeader } from './components/SiteHeader';
 import { HeroBookshelf } from './components/HeroBookshelf';
+import { LibraryAisle } from './components/LibraryAisle';
+import { WritingDesk } from './components/WritingDesk';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -166,6 +168,7 @@ function App() {
 
         {/* ---------- Mission ---------- */}
         <section id="mission-section" ref={missionRef} className="panel panel--paper mission-grid">
+          <LibraryAisle className="mission-grid-bg" />
           <span className="section-label" data-fade>(MISSION)</span>
           <div className="mission-content" data-fade>
             <RevealText as="h1" className="mission-heading" text={'「学び」を\nエンジニアリングする。'} />
@@ -212,6 +215,7 @@ function App() {
         {/* ---------- 代表メッセージ ---------- */}
         <section id="ceo-message" ref={ceoRef} className="panel panel--paper ceo-v2-section">
           <div className="ceo-v2-top">
+            <WritingDesk className="ceo-v2-top-bg" />
             <span className="section-label" data-fade>(ABOUT)</span>
             <div className="ceo-v2-body" data-fade>
               <div className="ceo-v2-text">
@@ -222,9 +226,6 @@ function App() {
                 <p>私はこれまで、リクルートでの多様な事業開発や、デジタル庁での行政DX推進、そして技術経営（MOT）の研究を通じ、一貫して「技術と組織、そして人の成長」に向き合ってきました。</p>
                 <p>デジタルスキルアカデミーは、現代の知識変遷や技術進展を鑑みたうえで、<strong>「学びをエンジニアリングする」</strong>ことを掲げて創業しました。産・官・学の各現場で培った実践的な知見を、科学的な教育アプローチで体系化し、高度IT人材を育成するための最適な学習媒体・環境・場をプロデュースします。</p>
                 <p>私たちが提供する本や場から得られる「確かな学び」が、皆さんのキャリアと未来をより豊かに、より情熱的なものに変えていく一助となり、私たちがその伴走者となれば幸いです。</p>
-              </div>
-              <div className="ceo-v2-photo">
-                <img src="/profile.jpg" alt="代表 納富翔太" />
               </div>
             </div>
           </div>
