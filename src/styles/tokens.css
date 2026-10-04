@@ -19,9 +19,9 @@
   --primary-color: var(--c-ink);
   --accent-color: var(--c-accent);
 
-  /* Typography — 見出しは RocknRoll One（和文・欧文どちらも1書体でカバーできる、太く個性のある書体） */
-  --font-family: 'Zen Kaku Gothic New', 'Hiragino Kaku Gothic ProN', sans-serif;
-  --font-display: 'RocknRoll One', 'Zen Kaku Gothic New', sans-serif;
+  /* Typography — Lora（欧文）+ Noto Serif JP（和文）。出版社らしい、本の組版を思わせるセリフ体で統一 */
+  --font-family: 'Lora', 'Noto Serif JP', serif;
+  --font-display: 'Lora', 'Noto Serif JP', serif;
   --type-scale-1: 44px;
   --type-scale-2: 26px;
   --type-base: 16px;

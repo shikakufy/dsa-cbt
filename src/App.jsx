@@ -10,6 +10,7 @@ import { useReducedMotion } from './hooks/useReducedMotion';
 import { useScrollFade } from './hooks/useScrollFade';
 import { RevealText } from './components/RevealText';
 import { SiteHeader } from './components/SiteHeader';
+import { HeroBookshelf } from './components/HeroBookshelf';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -155,6 +156,7 @@ function App() {
       <main className="home-main">
         {/* ---------- Hero (Stage) ---------- */}
         <section className="panel panel--paper hero-stage">
+          <HeroBookshelf className="hero-stage-bookshelf" />
           <div className="hero-stage-mark">
             <MarkD />
           </div>
