@@ -5,7 +5,7 @@ const CONTACT_FORM =
   'https://docs.google.com/forms/d/e/1FAIpQLSffFv1PxPpy6m7A-qUtmi-2iIjLU8Ma6a6KFgHp1CEuyXDimg/viewform?usp=dialog';
 
 /** dark: trueでダークセクション用の白版 */
-const MarkD = ({ size = 34, dark = false }) => (
+const MarkD = ({ size = 38, dark = false }) => (
   <svg width={size} height={size} viewBox="0 0 26 26" aria-hidden="true">
     <rect x="2" y="2" width="22" height="22" rx="7" fill="none" stroke={dark ? '#fff' : '#2e4374'} strokeWidth="1.6" />
     <path d="M10 8 H14 A5 5 0 0 1 14 18 H10 Z" fill={dark ? '#fff' : '#000'} />
@@ -120,16 +120,6 @@ export function SiteHeader({ navItems }) {
               </span>
             ))}
           </nav>
-
-          <div className={`site-header-v2-icons${isScrolled ? ' is-hidden' : ''}`}>
-            <span className="icon-btn-v2" title="English (Coming soon)">EN</span>
-            <a className="icon-btn-v2" href={CONTACT_FORM} target="_blank" rel="noopener noreferrer" aria-label="お問い合わせ">
-              <svg width="16" height="12" viewBox="0 0 16 12" fill="none" stroke="currentColor" strokeWidth="1.3">
-                <rect x="0.5" y="0.5" width="15" height="11" rx="1.5" />
-                <path d="M1 1.5L8 7L15 1.5" />
-              </svg>
-            </a>
-          </div>
         </div>
       </header>
 
