@@ -19,9 +19,9 @@
   --primary-color: var(--c-ink);
   --accent-color: var(--c-accent);
 
-  /* Typography — Montserrat（欧文）+ M PLUS 1p（和文）。幾何学的な字形同士で相性のよい組み合わせ */
-  --font-family: 'Montserrat', 'M PLUS 1p', sans-serif;
-  --font-display: 'Montserrat', 'M PLUS 1p', sans-serif;
+  /* Typography — Poppins（欧文）+ M PLUS 1p（和文）。IT/スタートアップ/SaaS系で定番の、幾何学サンセリフ×視認性の高い組み合わせ */
+  --font-family: 'Poppins', 'M PLUS 1p', sans-serif;
+  --font-display: 'Poppins', 'M PLUS 1p', sans-serif;
   --type-scale-1: 44px;
   --type-scale-2: 26px;
   --type-base: 16px;
